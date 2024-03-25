@@ -1,4 +1,7 @@
 import { Routes, Route, Link } from "react-router-dom";
+import { useState, useEffect } from "react";
+
+
 
 import ProtectedRoute from "./Components/Authorization/ProtectedRoute";
 import Register from "./Components/Authorization/Register";
@@ -10,8 +13,14 @@ import FourOFour from "./Pages/FourOFour";
 import About from "./Pages/About";
 import LandingPage from "./Pages/LandingPage";
 import Form from "./Pages/Form";
+import ReviewAddForm from "./Components/Reviews/ReviewAddForm";
 
 function App() {
+  const [reviews, setReviews] = useState([])
+  const [user, setUser] = useState({ username: "", password: "" });
+  const [username, setUsername] = useState("")
+
+
   return (
     <Routes>
       <Route
@@ -26,18 +35,18 @@ function App() {
           // </div>
         }
       />
-      <Route path="/login" element={<Login />} />
+      <Route path="/login" element={<Login user={user} setUser={setUser}/>} />
       <Route path="/register" element={<Register />} />
       {/* Names of routes? */}
       <Route path="/teapots" element={<Index />} />
-      <Route exact path="/teapots/:teapot_id" element={<Show />} />
+      <Route exact path="/teapots/:teapot_id" element={<Show reviews={reviews} setReviews={setReviews}/>} />
       <Route path="/about" element={<About />} />
       <Route path="*" element={<FourOFour />} />
       <Route element={<ProtectedRoute />}>
         {/* Place protected routes here */}
         <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/teapots/new" element={<Form />} />
-        <Route path="/teapots/:teapot_id/edit/:review_id" element={<Form />} />
+        <Route path="/teapots/:teapot_id/new" element={<ReviewAddForm username={username} reviews={reviews} setReviews={setReviews}/>} />
+        {/* <Route path="/teapots/:teapot_id/edit/:review_id" element={<Form />} /> */}
       </Route>
     </Routes>
   );

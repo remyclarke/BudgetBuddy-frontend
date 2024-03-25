@@ -1,11 +1,11 @@
-import { useState, useEffect } from "react";
+
 import { useNavigate, Link } from "react-router-dom";
 const URL = import.meta.env.VITE_BASE_URL;
 
 console.log(`URL`, URL)
-const Login = () => {
+const Login = ({user, setUser, setUsername, username}) => {
   const navigate = useNavigate();
-  const [user, setUser] = useState({ username: "", password: "" });
+
 
   function handleChange(event) {
     setUser({ ...user, [event.target.id]: event.target.value });
@@ -32,7 +32,6 @@ const Login = () => {
         setUser({ username: "", password: "" });
         throw new Error("Registration failed");
       }
-
       navigate("/dashboard");
     } catch (error) {
       console.error("Error during registration:", error);
