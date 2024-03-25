@@ -14,7 +14,7 @@ const Teapots = () => {
 
   return (
     <div>
-      Teapots
+      <h3>All Teapots</h3>
       {teapots.map((teapot) => {
         return <Teapot key={teapot.id} teapot={teapot} />
       })}
