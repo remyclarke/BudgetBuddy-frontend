@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
 const URL = import.meta.env.VITE_BASE_URL;
 
-console.log(`URL`, URL)
 const Login = () => {
   const navigate = useNavigate();
   const [user, setUser] = useState({ username: "", password: "" });
@@ -13,8 +12,11 @@ const Login = () => {
   // This function is being used in two places. It can be extracted to a helpers.js file
 
   async function postFetch(user) {
-    console.log(`cookie: `,document.cookie)
-    const csrfToken = document.cookie.split("; ").find((row) => row.startsWith("XSRF-TOKEN=")).split("=")[1]; // Extract CSRF token from cookies
+    console.log(`cookie: `, document.cookie);
+    const csrfToken = document.cookie
+      .split("; ")
+      .find((row) => row.startsWith("XSRF-TOKEN="))
+      .split("=")[1]; // Extract CSRF token from cookies
     const options = {
       method: "POST",
       headers: {
@@ -56,7 +58,6 @@ const Login = () => {
     const user = { username: "demo", password: "password" };
     postFetch(user);
   }
-
 
   // BUILD OUT YOUR FORM PROPERLY WITH LABELS AND WHATEVER CSS FRAMEWORK YOU MAY USE OR VANILLA CSS. THIS IS JUST A BOILERPLATE
 
