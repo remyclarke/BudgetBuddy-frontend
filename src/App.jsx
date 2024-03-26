@@ -17,9 +17,8 @@ import ReviewAddForm from "./Components/Reviews/ReviewAddForm";
 
 function App() {
   const [reviews, setReviews] = useState([])
-  const [user, setUser] = useState({ username: "", password: "" });
-  const [username, setUsername] = useState("")
 
+  const [userInfo, setUserInfo] = useState({})
 
   return (
     <Routes>
@@ -35,7 +34,7 @@ function App() {
           // </div>
         }
       />
-      <Route path="/login" element={<Login user={user} setUser={setUser}/>} />
+      <Route path="/login" element={<Login setUserInfo={setUserInfo}/>} />
       <Route path="/register" element={<Register />} />
       {/* Names of routes? */}
       <Route path="/teapots" element={<Index />} />
@@ -45,7 +44,7 @@ function App() {
       <Route element={<ProtectedRoute />}>
         {/* Place protected routes here */}
         <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/teapots/:teapot_id/new" element={<ReviewAddForm username={username} reviews={reviews} setReviews={setReviews}/>} />
+        <Route path="/teapots/:teapot_id/new" element={<ReviewAddForm userInfo={userInfo} reviews={reviews} setReviews={setReviews}/>} />
         {/* <Route path="/teapots/:teapot_id/edit/:review_id" element={<Form />} /> */}
       </Route>
     </Routes>

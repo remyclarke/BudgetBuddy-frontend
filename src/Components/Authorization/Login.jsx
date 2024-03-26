@@ -1,9 +1,11 @@
 
 import { useNavigate, Link } from "react-router-dom";
+import { useState, useEffect } from "react";
 const URL = import.meta.env.VITE_BASE_URL;
 
 console.log(`URL`, URL)
-const Login = ({user, setUser, setUsername, username}) => {
+const Login = ({setUserInfo}) => {
+  const [user, setUser] = useState({ username: "", password: "" });
   const navigate = useNavigate();
 
 
@@ -24,14 +26,20 @@ const Login = ({user, setUser, setUsername, username}) => {
       credentials: "include", // Important: Include cookies in the request
       body: JSON.stringify(user),
     };
-
+    
+    
     try {
       const res = await fetch(`${URL}/api/auth/login`, options);
+      const data = await res.json()
+      setUserInfo(data)
+      // console.log(data)
+      
       if (!res.ok) {
         alert("Login failed");
         setUser({ username: "", password: "" });
         throw new Error("Registration failed");
-      }
+      } 
+
       navigate("/dashboard");
     } catch (error) {
       console.error("Error during registration:", error);
@@ -47,6 +55,7 @@ const Login = ({user, setUser, setUsername, username}) => {
     }
 
     postFetch(user);
+
   }
 
   //Demo User Login Function
@@ -56,6 +65,13 @@ const Login = ({user, setUser, setUsername, username}) => {
     postFetch(user);
   }
 
+  // useEffect(() => {
+  //   fetch(`${URL}/api/users/${user.username}`)
+  //   .then((res) => res.json())
+  //   .then((data) => console.log(data))
+  //   // const userId = data.id
+  //   .catch((error) => 'Error fetching user id')
+  // }, [user])
 
   // BUILD OUT YOUR FORM PROPERLY WITH LABELS AND WHATEVER CSS FRAMEWORK YOU MAY USE OR VANILLA CSS. THIS IS JUST A BOILERPLATE
 

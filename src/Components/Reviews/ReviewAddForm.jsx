@@ -1,23 +1,25 @@
 import { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom'
+import { useNavigate, Link, useParams, useOutletContext } from "react-router-dom";
 const ReviewAddForm = ({username, reviews, setReviews}) => {
   const { teapot_id } = useParams()
+  const { user } = useOutletContext()
+  const navigate=useNavigate()
   const URL = import.meta.env.VITE_BASE_URL;
-  console.log(username)
   const currentDate = new Date();
   const year = currentDate.getFullYear();
   const month = currentDate.getMonth() + 1; // Adding 1 because getMonth() returns zero-based month (0 for January)
   const day = currentDate.getDate();
-  console.log(`${year}-${month}-${day}`);
+  // console.log(`${year}-${month}-${day}`);
 
-  console.log(username)
+
   const [newReview, setNewReview] = useState({
     content: '',
     rating: '',
-    user_id: 1,
+    user_id: user.id,
     created_at: `${year}-${month}-${day}`,
-    updated_at: '',
   })
+
+
   const handleSubmit = (event) => {
     event.preventDefault()
   
@@ -33,22 +35,16 @@ const ReviewAddForm = ({username, reviews, setReviews}) => {
     })
     .then((res) => res.json())
     .then((data) => setReviews([data, ...reviews]))
+    .then(() => navigate(`/teapots/${teapot_id}`))
     .catch((error) => console.error('catch', error))
 
     }
-
     const handleTextChange = (event) => {
       setNewReview({
         ...newReview,
         [event.target.id]: event.target.value,
       })
     }
-  
-    // useEffect(() => {
-    //   fetch(`${URL}/api/users/${username}`)
-    //   .then((res) => res.json())
-    //   .then((data) => console.log(data))
-    // }, [username])
   return (
     
     <div>
@@ -75,10 +71,11 @@ const ReviewAddForm = ({username, reviews, setReviews}) => {
         onChange={handleTextChange}
       />
       <br />
-
       <input type="submit" />
     </form>
+    <Link to={`/teapots/${teapot_id}`}>Cancel</Link>
   </div>
+  
   )
 }
 
