@@ -14,11 +14,12 @@ const Review = ({ review }) => {
   return (
     <div className="review-card">
       <h3>Username: </h3>
+      <p>Rating: {"⭐️".repeat(review.rating)}</p>
       <p>{formattedDate(review.created_at)}</p>
       <p>{review.content}</p>
-      <p>Rating: {review.rating}</p>
       <Link to={"/"} style={{ textDecoration: "none", color: "black" }}>
         <button>Edit</button>
+        <button>Delete</button>
       </Link>
     </div>
   );
