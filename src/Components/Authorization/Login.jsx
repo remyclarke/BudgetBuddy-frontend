@@ -1,10 +1,14 @@
-import { useState, useEffect } from "react";
+
 import { useNavigate, Link } from "react-router-dom";
+import { useState, useEffect } from "react";
 const URL = import.meta.env.VITE_BASE_URL;
 
-const Login = () => {
-  const navigate = useNavigate();
+
+// console.log(`URL`, URL)
+const Login = ({setUserInfo}) => {
   const [user, setUser] = useState({ username: "", password: "" });
+  const navigate = useNavigate();
+
 
   function handleChange(event) {
     setUser({ ...user, [event.target.id]: event.target.value });
@@ -26,14 +30,19 @@ const Login = () => {
       credentials: "include", // Important: Include cookies in the request
       body: JSON.stringify(user),
     };
-
+    
+    
     try {
       const res = await fetch(`${URL}/api/auth/login`, options);
+      const data = await res.json()
+      setUserInfo(data)
+      // console.log(data)
+      
       if (!res.ok) {
         alert("Login failed");
         setUser({ username: "", password: "" });
         throw new Error("Registration failed");
-      }
+      } 
 
       navigate("/dashboard");
     } catch (error) {
@@ -50,6 +59,7 @@ const Login = () => {
     }
 
     postFetch(user);
+
   }
 
   //Demo User Login Function

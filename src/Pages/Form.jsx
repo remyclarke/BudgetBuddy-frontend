@@ -1,7 +1,9 @@
-import React from "react";
+// import ReviewForm from "../Components/Reviews/ReviewForm";
 
 const Form = () => {
-  return <div>Form</div>;
+  return 
+    // <ReviewForm />
+  
 };
 
 export default Form;
