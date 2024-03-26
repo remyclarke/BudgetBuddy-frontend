@@ -5,7 +5,7 @@ import "./Teapots.css";
 
 const URL = import.meta.env.VITE_BASE_URL;
 
-const TeapotDetails = () => {
+const TeapotDetails = ({ reviews, setReviews }) => {
   const [teapot, setTeapot] = useState();
 
   const { teapot_id } = useParams();
@@ -32,13 +32,17 @@ const TeapotDetails = () => {
               Capacity: {teapot.capacity} cup
               {teapot.capacity === 1 ? "" : "s"}
             </p>
-            <Link to={"/"}>
+            <Link to={`/teapots/${teapot_id}/new`}>
               <button>Add Review</button>
             </Link>
           </section>
         </div>
       )}
-      <ReviewsIndex teapot_id={teapot_id} />
+      <ReviewsIndex
+        teapot_id={teapot_id}
+        reviews={reviews}
+        setReviews={setReviews}
+      />
     </div>
   );
 };

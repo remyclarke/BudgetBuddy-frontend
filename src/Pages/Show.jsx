@@ -1,10 +1,10 @@
 import React from "react";
 import TeapotDetails from "../Components/Teapots/TeapotDetails";
 
-const Show = () => {
+const Show = ({ reviews, setReviews }) => {
   return (
     <div>
-      <TeapotDetails />
+      <TeapotDetails reviews={reviews} setReviews={setReviews} />
     </div>
   );
 };
