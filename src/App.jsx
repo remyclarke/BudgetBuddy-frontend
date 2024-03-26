@@ -12,6 +12,7 @@ import About from "./Pages/About";
 import LandingPage from "./Pages/LandingPage";
 import Form from "./Pages/Form";
 import ReviewAddForm from "./Components/Reviews/ReviewAddForm";
+import NavBar from "./Components/Common/NavBar";
 
 function App() {
   const [reviews, setReviews] = useState([]);
@@ -19,46 +20,58 @@ function App() {
   const [userInfo, setUserInfo] = useState({});
 
   return (
-    <Routes>
-      <Route
-        path="/"
-        element={
-          <LandingPage />
-          // <div>
-          //   <h1>Welcome to the Auth Starter</h1>
-          //   <Link to="/login">Login</Link>
-          //   <h2>If you are not logged in you cannot reach this route. Try!</h2>
-          //   <Link to="/dashboard">Dashboard</Link>
-          // </div>
-        }
-      />
-      <Route path="/login" element={<Login setUserInfo={setUserInfo} />} />
-      <Route path="/register" element={<Register />} />
-      {/* Names of routes? */}
-      <Route path="/teapots" element={<Index />} />
-      <Route
-        exact
-        path="/teapots/:teapot_id"
-        element={<Show reviews={reviews} setReviews={setReviews} />}
-      />
-      <Route path="/about" element={<About />} />
-      <Route path="*" element={<FourOFour />} />
-      <Route element={<ProtectedRoute />}>
-        {/* Place protected routes here */}
-        <Route path="/dashboard" element={<Dashboard />} />
+    <>
+      <NavBar />
+      <Routes>
         <Route
-          path="/teapots/:teapot_id/new"
+          path="/"
           element={
-            <ReviewAddForm
-              userInfo={userInfo}
+            <LandingPage />
+            // <div>
+            //   <h1>Welcome to the Auth Starter</h1>
+            //   <Link to="/login">Login</Link>
+            //   <h2>If you are not logged in you cannot reach this route. Try!</h2>
+            //   <Link to="/dashboard">Dashboard</Link>
+            // </div>
+          }
+        />
+        <Route path="/login" element={<Login setUserInfo={setUserInfo} />} />
+        <Route path="/register" element={<Register />} />
+        {/* Names of routes? */}
+        <Route path="/teapots" element={<Index />} />
+        <Route
+          exact
+          path="/teapots/:teapot_id"
+          element={
+            <Show
               reviews={reviews}
               setReviews={setReviews}
+              userInfo={userInfo}
             />
           }
         />
-        <Route path="/teapots/:teapot_id/edit/:review_id" element={<Form />} />
-      </Route>
-    </Routes>
+        <Route path="/about" element={<About />} />
+        <Route path="*" element={<FourOFour />} />
+        <Route element={<ProtectedRoute />}>
+          {/* Place protected routes here */}
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route
+            path="/teapots/:teapot_id/new"
+            element={
+              <ReviewAddForm
+                userInfo={userInfo}
+                reviews={reviews}
+                setReviews={setReviews}
+              />
+            }
+          />
+          <Route
+            path="/teapots/:teapot_id/edit/:review_id"
+            element={<Form />}
+          />
+        </Route>
+      </Routes>
+    </>
   );
 }
 

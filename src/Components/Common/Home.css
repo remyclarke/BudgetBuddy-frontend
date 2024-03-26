@@ -1,0 +1,81 @@
+@keyframes slideInRight {
+  from {
+    transform: translateX(1000px);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.logo {
+  margin: 0 auto;
+  margin-top: 25%;
+  margin-left: 25%;
+  animation-name: slideInRight;
+  animation-duration: 3s;
+  animation-timing-function: ease-in;
+  z-index: 0;
+}
+
+.steam-wrap {
+  position: absolute;
+  top: 475px;
+  left: 430px;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  animation-delay: 3s;
+}
+
+#steam {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background-color: grey;
+  border-radius: 50%;
+  margin-left: 75px;
+  margin-top: -75px;
+  z-index: 1;
+  opacity: 0;
+}
+
+.steam-1 {
+  animation: steam-1 2s ease-out infinite;
+  animation-delay: 3s;
+}
+
+.steam-3 {
+  animation: steam-1 2s ease-out 1s infinite;
+  animation-delay: 3.3s;
+}
+
+@keyframes steam-1 {
+  from {
+    transform: translateY(0) translateX(0) scale(0.25);
+    opacity: 0.25;
+  }
+  to {
+    transform: translateY(-200px) translateX(-20px) scale(1);
+    opacity: 0;
+  }
+}
+
+.steam-2 {
+  animation: steam-2 2s ease-out 0.5s infinite;
+  animation-delay: 3.6s;
+}
+
+.steam-4 {
+  animation: steam-2 2s ease-out 1.5s infinite;
+  animation-delay: 3.8s;
+}
+
+@keyframes steam-2 {
+  from {
+    transform: translateY(0) translateX(0) scale(0.25);
+    opacity: 0.25;
+  }
+  to {
+    transform: translateY(-200px) translateX(20px) scale(1);
+    opacity: 0;
+  }
+}

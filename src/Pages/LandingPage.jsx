@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import "../index.css";
+import Home from "../Components/Common/Home";
 const URL = import.meta.env.VITE_BASE_URL;
 
 const LandingPage = () => {
@@ -16,7 +17,11 @@ const LandingPage = () => {
       .catch((error) => console.error("Error fetching CSRF token:", error));
   }, []);
 
-  return <div className="square"></div>;
+  return (
+    <div>
+      <Home />
+    </div>
+  );
 };
 
 export default LandingPage;

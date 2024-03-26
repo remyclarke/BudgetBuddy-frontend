@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-const Review = ({ review, teapot_id }) => {
+const Review = ({ review, teapot_id, userInfo }) => {
   const formattedDate = (reviewDate) => {
     const parts = reviewDate.split("-");
     const newReviewDate = new Date(parts[0], parts[1] - 1, parts[2]);
@@ -13,7 +13,7 @@ const Review = ({ review, teapot_id }) => {
 
   return (
     <div className="review-card">
-      <h3>Username: </h3>
+      <h3>{userInfo.username}</h3>
       <p className="center-grid">Rating: {"⭐️".repeat(review.rating)}</p>
       <p className="center-grid">{formattedDate(review.created_at)}</p>
       <p>{review.content}</p>
