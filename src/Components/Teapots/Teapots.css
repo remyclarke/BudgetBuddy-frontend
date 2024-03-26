@@ -16,6 +16,46 @@
   place-items: center;
 }
 
+.show-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  place-items: center;
+  margin: 30px;
+}
+
+.info-section {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  border: 2px solid black;
+  padding: 10px;
+  border-radius: 20px;
+  height: 300px;
+}
+
+.image-section img {
+  border: 2px solid black;
+  border-radius: 20px;
+}
+
+.reviews-container {
+  display: block;
+  margin: 30px;
+  /* grid-template-columns: 1fr; */
+}
+
+.reviews-container h2 {
+  margin: 20px;
+}
+
+.review-card {
+  border: 2px solid black;
+  margin: 20px;
+  padding: 10px;
+  width: 500px;
+  border-radius: 20px;
+}
+
 h2 {
   grid-row: 1;
   grid-column: 1/4;

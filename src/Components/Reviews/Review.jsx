@@ -1,4 +1,4 @@
-import React from "react";
+import { Link } from "react-router-dom";
 
 const Review = ({ review }) => {
   const formattedDate = (reviewDate) => {
@@ -12,11 +12,14 @@ const Review = ({ review }) => {
   };
 
   return (
-    <div>
+    <div className="review-card">
       <h3>Username: </h3>
       <p>{formattedDate(review.created_at)}</p>
       <p>{review.content}</p>
       <p>Rating: {review.rating}</p>
+      <Link to={"/"} style={{ textDecoration: "none", color: "black" }}>
+        <button>Edit</button>
+      </Link>
     </div>
   );
 };

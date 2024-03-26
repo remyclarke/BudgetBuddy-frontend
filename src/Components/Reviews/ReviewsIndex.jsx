@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import Review from "./Review";
 
 const URL = import.meta.env.VITE_BASE_URL;
@@ -13,12 +14,16 @@ const ReviewsIndex = ({ teapot_id }) => {
   }, [teapot_id]);
 
   return (
-    <div>
+    <section className="reviews-container">
       <h2>Reviews</h2>
-      {reviews.map((review) => (
-        <Review key={review.id} review={review} />
-      ))}
-    </div>
+      {reviews.length === 0 ? (
+        <Link to={"/"} style={{ margin: "20px" }}>
+          Be the first to add a review
+        </Link>
+      ) : (
+        reviews.map((review) => <Review key={review.id} review={review} />)
+      )}
+    </section>
   );
 };
 

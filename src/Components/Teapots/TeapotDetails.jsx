@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
-import { useParams, useNavigate, Link } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import ReviewsIndex from "../Reviews/ReviewsIndex";
+import "./Teapots.css";
 
 const URL = import.meta.env.VITE_BASE_URL;
 
@@ -17,10 +18,12 @@ const TeapotDetails = () => {
 
   return (
     <div>
-      <section>
-        {teapot && (
-          <article>
+      {teapot && (
+        <div className="show-container">
+          <section className="image-section">
             <img src={teapot.image} alt={teapot.name} />
+          </section>
+          <section className="info-section">
             <h3>{teapot.name}</h3>
             <p>Price: ${teapot.price}.00</p>
             <p>Description: {teapot.description}</p>
@@ -29,9 +32,12 @@ const TeapotDetails = () => {
               Capacity: {teapot.capacity} cup
               {teapot.capacity === 1 ? "" : "s"}
             </p>
-          </article>
-        )}
-      </section>
+            <Link to={"/"}>
+              <button>Add Review</button>
+            </Link>
+          </section>
+        </div>
+      )}
       <ReviewsIndex teapot_id={teapot_id} />
     </div>
   );
