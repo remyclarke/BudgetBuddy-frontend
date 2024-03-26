@@ -1,7 +1,30 @@
-import React from "react";
+import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import Review from "./Review";
 
-const ReviewsIndex = () => {
-  return <div>ReviewsIndex</div>;
+const URL = import.meta.env.VITE_BASE_URL;
+
+const ReviewsIndex = ({ teapot_id }) => {
+  const [reviews, setReviews] = useState([]);
+
+  useEffect(() => {
+    fetch(`${URL}/api/teapots/${teapot_id}/reviews`)
+      .then((res) => res.json())
+      .then((data) => setReviews(data.allReviews));
+  }, [teapot_id]);
+
+  return (
+    <section className="reviews-container">
+      <h2>Reviews</h2>
+      {reviews.length === 0 ? (
+        <Link to={"/"} style={{ margin: "20px" }}>
+          Be the first to add a review
+        </Link>
+      ) : (
+        reviews.map((review) => <Review key={review.id} review={review} />)
+      )}
+    </section>
+  );
 };
 
 export default ReviewsIndex;

@@ -3,7 +3,8 @@ import { useNavigate, Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 const URL = import.meta.env.VITE_BASE_URL;
 
-console.log(`URL`, URL)
+
+// console.log(`URL`, URL)
 const Login = ({setUserInfo}) => {
   const [user, setUser] = useState({ username: "", password: "" });
   const navigate = useNavigate();
@@ -15,8 +16,11 @@ const Login = ({setUserInfo}) => {
   // This function is being used in two places. It can be extracted to a helpers.js file
 
   async function postFetch(user) {
-    console.log(`cookie: `,document.cookie)
-    const csrfToken = document.cookie.split("; ").find((row) => row.startsWith("XSRF-TOKEN=")).split("=")[1]; // Extract CSRF token from cookies
+    console.log(`cookie: `, document.cookie);
+    const csrfToken = document.cookie
+      .split("; ")
+      .find((row) => row.startsWith("XSRF-TOKEN="))
+      .split("=")[1]; // Extract CSRF token from cookies
     const options = {
       method: "POST",
       headers: {
@@ -64,14 +68,6 @@ const Login = ({setUserInfo}) => {
     const user = { username: "demo", password: "password" };
     postFetch(user);
   }
-
-  // useEffect(() => {
-  //   fetch(`${URL}/api/users/${user.username}`)
-  //   .then((res) => res.json())
-  //   .then((data) => console.log(data))
-  //   // const userId = data.id
-  //   .catch((error) => 'Error fetching user id')
-  // }, [user])
 
   // BUILD OUT YOUR FORM PROPERLY WITH LABELS AND WHATEVER CSS FRAMEWORK YOU MAY USE OR VANILLA CSS. THIS IS JUST A BOILERPLATE
 
