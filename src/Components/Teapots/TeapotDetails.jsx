@@ -32,7 +32,7 @@ const TeapotDetails = () => {
               Capacity: {teapot.capacity} cup
               {teapot.capacity === 1 ? "" : "s"}
             </p>
-            <Link to={"/"}>
+            <Link to={`/teapots/${teapot_id}/new`}>
               <button>Add Review</button>
             </Link>
           </section>

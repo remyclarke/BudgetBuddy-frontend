@@ -1,8 +1,6 @@
 import { Routes, Route, Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 
-
-
 import ProtectedRoute from "./Components/Authorization/ProtectedRoute";
 import Register from "./Components/Authorization/Register";
 import Login from "./Components/Authorization/Login";
