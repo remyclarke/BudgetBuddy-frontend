@@ -23,7 +23,7 @@ const SearchBar = ({teapots}) => {
         <form className="search-input">
           <label htmlFor="searchInput">Search all teapots: </label>
           <input
-            placeholder="enter any search term"
+            placeholder="enter search term"
             type="search"
             id="searchInput"
             onChange={handleTextChange}
