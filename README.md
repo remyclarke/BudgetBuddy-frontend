@@ -97,17 +97,33 @@ Start the development server: npm start
 
 ### routing
 
-We used (?) Routes for the following files below:
+We used (10?) a lot of Routes for the following files below:
 
 -Index.html
 
 -About.jsx
 
--?.jsx
+-LandingPage.jsx
 
--?.jsx
+-Form.jsx
 
--?.jsx
+-Four0Four.jsx
+
+-Index.jsx
+
+-Show.jsx
+
+-Login.jsx
+
+-ProtectedRoute.jsx
+
+-Register.jsx
+
+-.jsx
+
+-.jsx
+
+-.jsx
 
 #### Bonus Items
 Stretch Goals:
@@ -151,20 +167,16 @@ Submit a pull request.
 
 (2) Very different to Jenny, is **Carl**. He's an artist with a short attention span, and also spends less time on apps because of his stance on limiting technology, or too much if it, in his life. Our TeaWhips has to have an appeal to lure him to not log off, and hopefully purchase one or two teapots, or at least grab his attention enough, to revisit in the near future to add to his wild art collection.
 
-## Code 418 Group Dynamic
+## Code 418 Contacts:
 *Marlon Regis* - marlonregis@pursuit.org
-.
 
 *Kenneth Cabral* - kennethcabral@pursuit.org
-. 
 
 *Brenda Soto* - bsoto@pursuit.org
-.
 
 *Anita Owen* - anitaown@pursuit.org
-.
 
-As a group, . Here's our `Team Norms` link: https://docs.google.com/document/d/1FETAEXKfVJviGIdRROPBv5K7-wRZFbXqEYB6R62w6Z0/edit
+As a group, the four of us were engaged daily, working on multiple tasks guided by our Trello board `To-Do, Doing, Done` detailed lists throughout each day, sometimes even weekends via Slack/Zoom. Here's our `Team Norms` link: https://docs.google.com/document/d/1FETAEXKfVJviGIdRROPBv5K7-wRZFbXqEYB6R62w6Z0/edit
 
 **Set Up Instructions**
 # Deploying Frontend on Netlify:
@@ -224,13 +236,13 @@ WIREFRAMES (desktop and mobile)
 
 <img src="https://res.cloudinary.com/dgifdj6nx/image/upload/v1711309424/Screenshot_2024-03-24_at_3.42.43_PM_glwsj9.png" alt="Review Form page" width="400" height="400">
 
-TeaWhips (preliminary process - screenshots of different pages)
+TeaWhips (preliminary process - screenshots of different pages in pre-production)
 
 <img src="?" alt="ABOUT" width="400" height="400">
 
-<img src="?" alt="?" width="400" height="400">
+<img src="https://res.cloudinary.com/dgifdj6nx/image/upload/v1711471662/Screenshot_2024-03-26_at_12.47.10_PM_ewfd8c.png" alt="Login" width="400" height="400">
 
-<img src="?" alt="TeaWhips" width="400" height="400">
+<img src="?" alt="About" width="400" height="400">
 
 ERDs (tables)
 
