@@ -51,26 +51,33 @@ const ReviewAddForm = ({username, reviews, setReviews}) => {
     <div>
     {/* {children} */}
     <form onSubmit={handleSubmit}>
-      <label htmlFor="content">Review:</label>
-      <textarea
-        id="content"
-        type="text"
-        name="content"
-        value={newReview.content}
-        placeholder="What do you think..."
-        onChange={handleTextChange}
-      />
-      <label htmlFor="rating">Rating:</label>
-      <input
-        id="rating"
-        type="number"
-        name="rating"
-        min="1"
-        max="5"
-        step="1"
-        value={newReview.rating}
-        onChange={handleTextChange}
-      />
+      <div>
+        <label htmlFor="content">Review:</label>
+        <textarea
+          id="content"
+          type="text"
+          name="content"
+          value={newReview.content}
+          placeholder="What do you think..."
+          onChange={handleTextChange}
+          required
+        />
+      </div>
+
+      <div>
+        <label htmlFor="rating">Rating:</label>
+        <input
+          id="rating"
+          type="number"
+          name="rating"
+          min="1"
+          max="5"
+          step="1"
+          value={newReview.rating}
+          onChange={handleTextChange}
+          required
+        />
+      </div>
       <br />
       <input type="submit" />
     </form>
