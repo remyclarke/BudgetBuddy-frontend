@@ -3,7 +3,7 @@ import FourOFourDetails from "../Components/Common/FourOFourDetails";
 
 const FourOFour = () => {
   return (
-    <div>
+    <div style={{ backgroundColor: "white" }}>
       <FourOFourDetails />
     </div>
   );

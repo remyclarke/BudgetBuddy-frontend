@@ -1,9 +1,9 @@
-import React from "react";
+import { Link } from "react-router-dom";
 import "./Home.css";
 
 const Home = () => {
   return (
-    <div>
+    <div className="home-div">
       <section className="steam-wrap">
         <article id="steam" className="steam-1"></article>
         <article id="steam" className="steam-2"></article>
@@ -11,10 +11,12 @@ const Home = () => {
         <article id="steam" className="steam-4"></article>
       </section>
       <section className="logo">
-        <img
-          src="https://res.cloudinary.com/dgifdj6nx/image/upload/v1711479225/TeaWhipsLanding2_mwgzcu.png"
-          alt="TeaWhips Logo"
-        />
+        <Link to={"/teapots"}>
+          <img
+            src="https://res.cloudinary.com/dgifdj6nx/image/upload/v1711550529/TeaWhip-Logo-nobackground_battdo.png"
+            alt="TeaWhips Logo"
+          />
+        </Link>
       </section>
     </div>
   );

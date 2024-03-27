@@ -6,7 +6,7 @@ const FourOFourDetails = () => {
     <div className="fof-details">
       <h1>Oops! Wrong teapot!</h1>
       <img
-        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQmfdl1vT2SXOQ8vWyyNPJLv_mJQwPdRw2eg&usqp=CAU"
+        src="https://res.cloudinary.com/dgifdj6nx/image/upload/v1711550075/TeaWhips-redcrispy_gpqtdx.jpg"
         alt="Red Teapot"
       />
       <Link to={"/teapots"}>Back to TeaWhips</Link>
