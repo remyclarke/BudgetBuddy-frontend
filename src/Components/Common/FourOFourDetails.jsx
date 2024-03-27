@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./FourOFourDetails.css";
 
 const FourOFourDetails = () => {
@@ -8,6 +9,7 @@ const FourOFourDetails = () => {
         src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQmfdl1vT2SXOQ8vWyyNPJLv_mJQwPdRw2eg&usqp=CAU"
         alt="Red Teapot"
       />
+      <Link to={"/teapots"}>Back to TeaWhips</Link>
     </div>
   );
 };
