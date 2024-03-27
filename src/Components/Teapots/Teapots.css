@@ -31,6 +31,7 @@
   padding: 10px;
   border-radius: 20px;
   height: 300px;
+  background-color: palegoldenrod;
 }
 
 .image-section img {
@@ -60,6 +61,7 @@
   padding: 10px;
   width: 100%;
   border-radius: 20px;
+  background-color: lightsalmon;
 }
 
 .review-card button {

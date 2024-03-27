@@ -7,10 +7,15 @@
   }
 }
 
+/* body {
+  background-color: rgb(147, 147, 1);
+} */
+
 .logo {
   margin: 0 auto;
-  margin-top: 25%;
-  margin-left: 25%;
+  position: absolute;
+  left: 25%;
+  top: 25%;
   animation-name: slideInRight;
   animation-duration: 3s;
   animation-timing-function: ease-in;
@@ -19,11 +24,14 @@
 
 .steam-wrap {
   position: absolute;
-  top: 475px;
-  left: 430px;
+  top: 40%;
+  left: 32%;
+  /* margin-top: 25%;
+  margin-left: 25%; */
   transform: translate(-50%, -50%);
   width: 300px;
   animation-delay: 3s;
+  z-index: 1;
 }
 
 #steam {
@@ -34,7 +42,6 @@
   border-radius: 50%;
   margin-left: 75px;
   margin-top: -75px;
-  z-index: 1;
   opacity: 0;
 }
 

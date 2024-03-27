@@ -1,0 +1,10 @@
+.fof-details {
+  margin: 0 auto;
+  text-align: center;
+  place-items: center;
+  margin-top: 10%;
+}
+
+.fof-details img {
+  width: 400px;
+}
