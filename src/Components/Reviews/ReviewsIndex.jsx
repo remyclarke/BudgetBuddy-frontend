@@ -4,11 +4,12 @@ import Review from "./Review";
 
 const URL = import.meta.env.VITE_BASE_URL;
 
-const ReviewsIndex = ({ teapot_id }) => {
-  const [reviews, setReviews] = useState([]);
+const ReviewsIndex = ({ teapot_id, reviews, setReviews, userInfo }) => {
 
   useEffect(() => {
-    fetch(`${URL}/api/teapots/${teapot_id}/reviews`)
+    fetch(`${URL}/api/teapots/${teapot_id}/reviews`, {
+        credentials: "include", // Important: Include cookies in the request
+      })
       .then((res) => res.json())
       .then((data) => setReviews(data.allReviews));
   }, [teapot_id]);
@@ -21,7 +22,7 @@ const ReviewsIndex = ({ teapot_id }) => {
           Be the first to add a review
         </Link>
       ) : (
-        reviews.map((review) => <Review key={review.id} review={review} />)
+        reviews.map((review) => <Review key={review.id} review={review} userInfo={userInfo} />)
       )}
     </section>
   );

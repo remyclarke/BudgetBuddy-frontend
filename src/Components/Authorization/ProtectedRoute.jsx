@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { Navigate, Outlet } from "react-router-dom";
 const URL = import.meta.env.VITE_BASE_URL;
 
-const useAuth = () => {
+export const useAuth = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const [user, setUser] = useState();

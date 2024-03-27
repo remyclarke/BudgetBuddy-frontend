@@ -14,12 +14,14 @@ import About from "./Pages/About";
 import LandingPage from "./Pages/LandingPage";
 import Form from "./Pages/Form";
 import ReviewAddForm from "./Components/Reviews/ReviewAddForm";
+import { ReviewEditForm } from "./Components/Reviews/ReviewEditForm";
 
 function App() {
   const [reviews, setReviews] = useState([])
 
   const [userInfo, setUserInfo] = useState({})
 
+  let variable;
   return (
     <Routes>
       <Route
@@ -34,18 +36,18 @@ function App() {
           // </div>
         }
       />
-      <Route path="/login" element={<Login setUserInfo={setUserInfo}/>} />
+      <Route path="/login" element={<Login setUserInfo={setUserInfo} variable={variable}/>} />
       <Route path="/register" element={<Register />} />
       {/* Names of routes? */}
       <Route path="/teapots" element={<Index />} />
-      <Route exact path="/teapots/:teapot_id" element={<Show reviews={reviews} setReviews={setReviews}/>} />
+      <Route exact path="/teapots/:teapot_id" element={<Show reviews={reviews} setReviews={setReviews} userInfo={userInfo} variable={variable}/>} />
       <Route path="/about" element={<About />} />
       <Route path="*" element={<FourOFour />} />
       <Route element={<ProtectedRoute />}>
         {/* Place protected routes here */}
-        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/dashboard" element={<Dashboard userInfo={userInfo}/>} />
         <Route path="/teapots/:teapot_id/new" element={<ReviewAddForm userInfo={userInfo} reviews={reviews} setReviews={setReviews}/>} />
-        {/* <Route path="/teapots/:teapot_id/edit/:review_id" element={<Form />} /> */}
+        <Route path="/teapots/:teapot_id/edit/:review_id" element={<ReviewEditForm reviews={reviews} setReviews={setReviews}/>} />
       </Route>
     </Routes>
   );
