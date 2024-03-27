@@ -19,9 +19,7 @@ import { ReviewEditForm } from "./Components/Reviews/ReviewEditForm";
 function App() {
   const [reviews, setReviews] = useState([]);
 
-  const [userInfo, setUserInfo] = useState({});
 
-  let variable;
   return (
     <>
       <NavBar />
@@ -38,7 +36,7 @@ function App() {
             // </div>
           }
         />
-        <Route path="/login" element={<Login setUserInfo={setUserInfo} />} />
+        <Route path="/login" element={<Login/>} />
         <Route path="/register" element={<Register />} />
         {/* Names of routes? */}
         <Route path="/teapots" element={<Index />} />
@@ -49,7 +47,6 @@ function App() {
             <Show
               reviews={reviews}
               setReviews={setReviews}
-              userInfo={userInfo}
             />
           }
         />
@@ -57,8 +54,8 @@ function App() {
         <Route path="*" element={<FourOFour />} />
       <Route element={<ProtectedRoute />}>
         {/* Place protected routes here */}
-        <Route path="/dashboard" element={<Dashboard userInfo={userInfo}/>} />
-        <Route path="/teapots/:teapot_id/new" element={<ReviewAddForm userInfo={userInfo} reviews={reviews} setReviews={setReviews}/>} />
+        <Route path="/dashboard" element={<Dashboard/>} />
+        <Route path="/teapots/:teapot_id/new" element={<ReviewAddForm reviews={reviews} setReviews={setReviews}/>} />
         <Route path="/teapots/:teapot_id/edit/:review_id" element={<ReviewEditForm reviews={reviews} setReviews={setReviews}/>} />
       </Route>
     </Routes>
