@@ -30,21 +30,24 @@ export const ReviewEditForm = ({setReviews, reviews, userInfo}) => {
 
 
       const handleEdit = (updatedReview) => {
-        const csrfToken = document.cookie.split("; ").find((row) => row.startsWith("XSRF-TOKEN=")).split("=")[1]; 
-        fetch(`${URL}/api/teapots/${teapot_id}/reviews/${review_id}`, {
-        method: 'PUT',
-        headers: {
-                'Content-Type': 'application/json',
-                "CSRF-Token": csrfToken,
+        const csrfToken = document.cookie.split("; ").find((row) => row.startsWith("XSRF-TOKEN=")).split("=")[1];
+        
+        if(updatedReview.content.length > 0 && updatedReview.rating.length > 0) {
+
+          fetch(`${URL}/api/teapots/${teapot_id}/reviews/${review_id}`, {
+            method: 'PUT',
+            headers: {
+              'Content-Type': 'application/json',
+              "CSRF-Token": csrfToken,
             },
             credentials: "include",
             body: JSON.stringify(updatedReview),
-        })
-        .then((response) => response.json())
-        .then((responseJSON) => {
+          })
+          .then((response) => response.json())
+          .then((responseJSON) => {
             const copyReviewArray = [...reviews]
             const indexUpdatedReview = copyReviewArray.findIndex((review) => {
-            return review.id === review_id
+              return review.id === review_id
             })
             copyReviewArray[indexUpdatedReview] = responseJSON
             setReviews(copyReviewArray)
@@ -53,10 +56,14 @@ export const ReviewEditForm = ({setReviews, reviews, userInfo}) => {
               rating: '',
               updated_at: ``
             })
-        })
-        .catch((error) => console.error(error))
-    }
-
+          })
+          .catch((error) => console.error(error))
+        } else {
+          alert(`Invalid Inputs`)
+          navigate(`/teapots/${teapot_id}`)
+        }
+      }
+        
 
 
       const handleTextChange = (event) => {
