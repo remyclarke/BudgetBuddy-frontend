@@ -3,8 +3,9 @@ import { useNavigate, Link, useParams, useOutletContext } from "react-router-dom
 const ReviewAddForm = ({username, reviews, setReviews}) => {
   const { teapot_id } = useParams()
   const { user } = useOutletContext()
-  const navigate=useNavigate()
+  const navigate = useNavigate()
   const URL = import.meta.env.VITE_BASE_URL;
+
   const currentDate = new Date();
   const year = currentDate.getFullYear();
   const month = currentDate.getMonth() + 1; // Adding 1 because getMonth() returns zero-based month (0 for January)
