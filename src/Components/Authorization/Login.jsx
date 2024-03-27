@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 const URL = import.meta.env.VITE_BASE_URL;
 
 // console.log(`URL`, URL)
-const Login = ({ setUserInfo }) => {
+const Login = () => {
   const [user, setUser] = useState({ username: "", password: "" });
   const navigate = useNavigate();
 
@@ -31,9 +31,6 @@ const Login = ({ setUserInfo }) => {
     try {
       const res = await fetch(`${URL}/api/auth/login`, options);
       const data = await res.json()
-      setUserInfo(data)
-
-      // console.log(data)
 
       if (!res.ok) {
         alert("Login failed");

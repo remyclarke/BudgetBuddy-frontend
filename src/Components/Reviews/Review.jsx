@@ -2,20 +2,14 @@ import { Link, useParams, useOutletContext, useNavigate } from "react-router-dom
 import { useAuth } from "../Authorization/ProtectedRoute";
 import { useState, useEffect } from "react";
 
-const Review = ({ review, teapot_id, userInfo }) => {
+const URL = import.meta.env.VITE_BASE_URL
+
+const Review = ({ review, reviews, setReviews }) => {
   const user = useAuth()
   const [username, setUserName] = useState('');
   const [loading, setLoading] = useState(true);
-  // console.log(user.user.username)
   const {teapot_id} = useParams()
   const navigate = useNavigate()
-
-  // useEffect(() => {
-  //   if (user.isAuthenticated) {
-  //     setUserName(user.user.username);
-  //     setLoading(false);
-  //   }
-  // }, [user]);
 
   const formattedDate = (reviewDate) => {
     const parts = reviewDate.split("-");
@@ -27,20 +21,38 @@ const Review = ({ review, teapot_id, userInfo }) => {
     });
   };
 
-  // const handleClick = () => {
-  //   console.log(userInfo.id)
-  //   if(review.user_id !== userInfo.id) {
-  //     alert(`Cannot update another users review`)
-  //   } else {
-  //     navigate(`/teapots/${teapot_id}/edit/${review.id}`)
-  //   }
-  // }
+  const handleDelete = (id) => {
+    const csrfToken = document.cookie.split("; ").find((row) => row.startsWith("XSRF-TOKEN=")).split("=")[1]; 
+
+    if(confirm(`Are you sure you want to delete your review?`)) {
+      fetch(`${URL}/api/teapots/${teapot_id}/reviews/${id}`, {
+        method: 'DELETE',
+        headers: {
+          "CSRF-Token": csrfToken,
+        },
+        credentials: "include"
+      })
+      .then((response) => response.json())
+      .then((responseJSON) => {
+        const copyReviewArray = [...reviews]
+        const indexDeletedReview = copyReviewArray.findIndex((review) => {
+          return review.id === id
+        })
+        copyReviewArray.splice(indexDeletedReview, 1)
+        setReviews(copyReviewArray)
+      })
+      .catch((error) => console.error(error))
+    }
+    
+  }
+
   return (
     <div className="review-card">
-      {/* <h3>Username: {username}</h3> */}
       <h3>Username: {review.username}</h3>
       <p className="center-grid">Rating: {"⭐️".repeat(review.rating)}</p>
-      <p className="center-grid">{formattedDate(review.created_at)}</p>
+      {<p className="center-grid">{ review.updated_at ? formattedDate(review.updated_at) : formattedDate(review.created_at)}</p> }
+      {review.updated_at && <p className="center-grid">Edited</p>}
+      
       <p>{review.content}</p>
       
         {user.isAuthenticated && (user.user.id === review.user_id) &&
@@ -49,9 +61,7 @@ const Review = ({ review, teapot_id, userInfo }) => {
           <Link to={`/teapots/${teapot_id}/edit/${review.id}`}>
           <button style={{ textDecoration: "none", color: "black" }}>Edit</button>
           </Link>
-          <Link to={"/"} style={{ textDecoration: "none", color: "black" }}>
-          <button>Delete</button>
-          </Link>
+          <button onClick={() => handleDelete(review.id)} style={{ textDecoration: "none", color: "black" }}>Delete</button>
         </div>)
         } 
     </div>
