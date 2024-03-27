@@ -1,9 +1,14 @@
-import { useState, useEffect } from 'react'
-import { useNavigate, Link, useParams, useOutletContext } from "react-router-dom";
-const ReviewAddForm = ({username, reviews, setReviews}) => {
-  const { teapot_id } = useParams()
-  const { user } = useOutletContext()
-  const navigate = useNavigate()
+import { useState, useEffect } from "react";
+import {
+  useNavigate,
+  Link,
+  useParams,
+  useOutletContext,
+} from "react-router-dom";
+const ReviewAddForm = ({ username, reviews, setReviews }) => {
+  const { teapot_id } = useParams();
+  const { user } = useOutletContext();
+  const navigate = useNavigate();
   const URL = import.meta.env.VITE_BASE_URL;
 
   const currentDate = new Date();
@@ -12,72 +17,85 @@ const ReviewAddForm = ({username, reviews, setReviews}) => {
   const day = currentDate.getDate();
   // console.log(`${year}-${month}-${day}`);
 
-
   const [newReview, setNewReview] = useState({
-    content: '',
-    rating: '',
+    content: "",
+    rating: "",
     user_id: user.id,
     created_at: `${year}-${month}-${day}`,
-  })
-
+  });
 
   const handleSubmit = (event) => {
-    event.preventDefault()
-  
-    const csrfToken = document.cookie.split("; ").find((row) => row.startsWith("XSRF-TOKEN=")).split("=")[1]; 
+    event.preventDefault();
+    const csrfToken = document.cookie
+      .split("; ")
+      .find((row) => row.startsWith("XSRF-TOKEN="))
+      .split("=")[1];
     fetch(`${URL}/api/teapots/${teapot_id}/reviews`, {
-    method: 'POST',
-    headers: {
-        'Content-Type': 'application/json',
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
         "CSRF-Token": csrfToken,
-    },
-    credentials: "include",
-    body: JSON.stringify(newReview),
+      },
+      credentials: "include",
+      body: JSON.stringify(newReview),
     })
-    .then((res) => res.json())
-    .then((data) => setReviews([data, ...reviews]))
-    .then(() => navigate(`/teapots/${teapot_id}`))
-    .catch((error) => console.error('catch', error))
+      .then((res) => res.json())
+      .then((data) => setReviews([data, ...reviews]))
+      .then(() => navigate(`/teapots/${teapot_id}`))
+      .catch((error) => console.error("catch", error));
+  };
+  const handleTextChange = (event) => {
+    setNewReview({
+      ...newReview,
+      [event.target.id]: event.target.value,
+    });
+  };
 
-    }
-    const handleTextChange = (event) => {
-      setNewReview({
-        ...newReview,
-        [event.target.id]: event.target.value,
-      })
-    }
+  // useEffect(() => {
+  //   // Fetch call to the root route of your backend to get the CSRF token
+  //   fetch(`${URL}`, {
+  //     credentials: "include", // Important: Include cookies in the request
+  //   })
+  //     .then((response) => {
+  //       if (response.ok) {
+  //         console.log("XSRF-Token cookie should now be set.");
+  //       }
+  //     })
+  //     .catch((error) => console.error("Error fetching CSRF token:", error));
+  // }, []);
+
   return (
-    
     <div>
-    {/* {children} */}
-    <form onSubmit={handleSubmit}>
-      <label htmlFor="content">Review:</label>
-      <textarea
-        id="content"
-        type="text"
-        name="content"
-        value={newReview.content}
-        placeholder="What do you think..."
-        onChange={handleTextChange}
-      />
-      <label htmlFor="rating">Rating:</label>
-      <input
-        id="rating"
-        type="number"
-        name="rating"
-        min="1"
-        max="5"
-        step="1"
-        value={newReview.rating}
-        onChange={handleTextChange}
-      />
-      <br />
-      <input type="submit" />
-    </form>
-    <Link to={`/teapots/${teapot_id}`}>Cancel</Link>
-  </div>
-  
-  )
-}
+      {/* {children} */}
+      <form onSubmit={handleSubmit}>
+        <label htmlFor="content">Review:</label>
+        <textarea
+          id="content"
+          type="text"
+          name="content"
+          value={newReview.content}
+          placeholder="What do you think..."
+          onChange={handleTextChange}
+          // required
+        />
+        <label htmlFor="rating">Rating:</label>
+        <input
+          id="rating"
+          type="number"
+          name="rating"
+          min="1"
+          max="5"
+          step="1"
+          value={newReview.rating}
+          onChange={handleTextChange}
+          // required
+        />
+        <br />
+        <input type="submit" />
+      </form>
+      <Link to={`/teapots/${teapot_id}`}>Cancel</Link>
+    </div>
+  );
+};
 
 export default ReviewAddForm;
