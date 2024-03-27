@@ -6,7 +6,7 @@
 # ABOUT US
 
 *Anita Owen*: https://github.com/AnitaOwen
-<img src="https://res.cloudinary.com/dgifdj6nx/image/upload/v1711312831/TeaWhips-slide1_spdyvw.jpg" alt="Anita!" width="300" height="300">
+<img src="https://res.cloudinary.com/dgifdj6nx/image/upload/t_Profile/v1711312831/TeaWhips-slide1_spdyvw.png" alt="Anita!" width="300" height="300">
 
 
 *Brenda Soto*: https://github.com/BSoto85
@@ -14,7 +14,7 @@
 
 
 *Kenneth Cabral*: https://github.com/KenCab123
-<img src="https://res.cloudinary.com/dgifdj6nx/image/upload/v1711480425/TeaWhips-HotRod_k7i3hu.avif" alt="Ken!" width="300" height="300">
+<img src="https://res.cloudinary.com/dgifdj6nx/image/upload/t_Profile/v1711480425/TeaWhips-HotRod_k7i3hu.png" alt="Ken!" width="300" height="300">
 
 
 *Marlon Regis*: https://github.com/MarlonPelau
@@ -35,10 +35,11 @@ In addition, the four of us also worked closely together, practicing and using t
 - Event Handlers
 - Fetch API
 - Promises
+- Error Components (included)
 - Data Manipulation & Parsing
 - Helper Functions
 - Cloudinary
-- Trello
+- Trello Board
 - dbdiagram (ERDs)
 - HTML, CSS, JS
 - CSS Grid 
@@ -56,9 +57,9 @@ In addition, the four of us also worked closely together, practicing and using t
 - Contributing
 
 # Features
--First off, our `landing page` has an `About` link  in the `Header/Navbar`, connecting the user our team that built this app with brief profiles on each of us. Don't forget to see what we all look like..🫖
+-First off, our `landing page` has an `About` link  in the `Header/Navbar`, connecting the user to our team that built this app with brief profiles on each of us. Don't forget to see what we all look like..🫖
 
--Immediately upon coming onto our `Landing page`, a boiling, vehicular 'TeaWhip' appears driving from right-to-left of the screen, and if you click on this 'TeaWhip' after it makes a sudden stop at the center of the screen, you're navigated towards another page to see all our 'TeaWhip' products.
+-Immediately upon coming onto our `Landing page`, our boiling, vehicular teapot appears driving from right-to-left of the screen, and if you click on this 'TeaWhip' after it makes a sudden stop at the center of the screen, you're navigated towards another page to see all our `TeaWhips` products.
 
 -A...
 
@@ -75,7 +76,7 @@ Clone the repository: git clone https..
 
 Navigate to the project directory:
 
-cd `pr..`
+cd `https://github.com/AnitaOwen/auth-react-login-project-frontend.git`
 
 3rd...
 
@@ -115,22 +116,18 @@ We used (10?) a lot of Routes for the following files below:
 
 -Register.jsx
 
--.jsx
-
--.jsx
-
--.jsx
-
 #### Bonus Items
 Stretch Goals:
 
--
+-Opted-in to use the User Login to our `TeaWhips` application, using the already prepared User Auth login front and backend starters.
 
--Most, if not all our images, are stored and uploaded in a Cloudinary account. 
+-Most, if not all our images, are stored and uploaded in our `Cloudinary` account. 
 
--
+-Created a `Search Bar` to enable users to search for the various product options available in our `TeaWhips` app.
 
--
+-`CSS Animations` for our `Landing Page` is used on our moving, vehicular `TeaWhips` logo.
+
+-There's also a designed `CSS 404 Page` included in our app.
 
 #### Contributing
 Contributions: 
