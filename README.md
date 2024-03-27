@@ -1,31 +1,27 @@
 # PROJECT START UP CHALLENGE 3 - FULLSTACK w/ Authentication & User Login
-***TeaWhips*** by CODE 418
+***TeaWhips*** by CODE 418 🫖
 
 <img src="https://res.cloudinary.com/dgifdj6nx/image/upload/t_Gradient fade/v1711048891/TeaWhips3_c6mmec.avif" alt="TeaWhips!" width="300" height="300">
 
 # ABOUT US
 
-*Anita Owen*
-<img src="https://res.cloudinary.com/dgifdj6nx/image/upload/t_Gradient fade/v1711048891/TeaWhips3_c6mmec.avif" alt="Anita!" width="300" height="300">
+*Anita Owen*: https://github.com/AnitaOwen
+<img src="https://res.cloudinary.com/dgifdj6nx/image/upload/v1711312831/TeaWhips-slide1_spdyvw.jpg" alt="Anita!" width="300" height="300">
 
-(https://github.com/AnitaOwen)
 
-*Brenda Soto*
+*Brenda Soto*: https://github.com/BSoto85
 <img src="https://res.cloudinary.com/dgifdj6nx/image/upload/t_Profile/v1711388131/TeaWhips-Brenda_ybojtq.png" alt="Brenda!" width="300" height="300">
 
-(https://github.com/BSoto85)
 
-*Kenneth Cabral*
-<img src="" alt="Ken!" width="300" height="300">
+*Kenneth Cabral*: https://github.com/KenCab123
+<img src="https://res.cloudinary.com/dgifdj6nx/image/upload/v1711480425/TeaWhips-HotRod_k7i3hu.avif" alt="Ken!" width="300" height="300">
 
-(https://github.com/KenCab123)
 
-*Marlon Regis*
+*Marlon Regis*: https://github.com/MarlonPelau
 <img src="https://res.cloudinary.com/dgifdj6nx/image/upload/t_Profile/v1711395991/IMG_77381_wt6lqt.png" alt="Marlon!" width="300" height="300">
 
-(https://github.com/MarlonPelau)
 
-Welcome to our quirky world of teapots disguised as vehicles! Our "Code 418" team: `Anita, Brenda, Kenneth & Marlon`, created a Full Stack application, `*TeaWhips*` using ReactJS, ExpressJS, PostgresSQL, pg-promise. `TeaWhips` is an e-commerce platform specializing in teapots shaped like vehicles. The app allows users to browse, purchase, and enjoy a unique collection of whimsical teapot designs. Users can explore various vehicle-inspired teapots and infuse their tea time with a touch of novelty and personality. The app caters to tea enthusiasts who appreciate creativity and novelty in their tea accessories, offering a curated selection of teapots designed to delight and inspire.
+Welcome to our quirky world of teapots disguised as vehicles! Our "Code 418" team of `Anita, Brenda, Kenneth & Marlon`, created a Full Stack application, `*TeaWhips*` using ReactJS, ExpressJS, PostgresSQL, pg-promise. `TeaWhips` is an e-commerce platform specializing in teapots shaped like vehicles. The app allows users to browse, purchase, review and enjoy a unique collection of whimsical teapot designs. Users can explore various vehicle-inspired teapots and infuse their tea time with a touch of novelty and personality. The app caters to tea/teapot enthusiasts who appreciate creativity and novelty in their tea accessories, offering a curated selection of teapots designed to delight and inspire.
 
 In addition, the four of us also worked closely together, practicing and using the following below **Project Tools & Skills**:
 - React Hooks
@@ -60,9 +56,9 @@ In addition, the four of us also worked closely together, practicing and using t
 - Contributing
 
 # Features
--First off, our `landing page` has an `About` link, connecting the user to us -- the team that built this app.
+-First off, our `landing page` has an `About` link  in the `Header/Navbar`, connecting the user our team that built this app with brief profiles on each of us. Don't forget to see what we all look like..🫖
 
--Functionality is immediate upon coming onto our `Landing page` by clicking any image, or text prompt in the `Header/Navbar`.
+-Immediately upon coming onto our `Landing page`, a boiling, vehicular 'TeaWhip' appears driving from right-to-left of the screen, and if you click on this 'TeaWhip' after it makes a sudden stop at the center of the screen, you're navigated towards another page to see all our 'TeaWhip' products.
 
 -A...
 
@@ -220,7 +216,7 @@ Click “Create Service”.
 Render will deploy your backend and provide a URL.
 
 ### Post-Deployment
-After deploying (*frontend* + *backend*), ensure to test your app thoroughly.
+After deploying (*frontend* + *backend*), ensure to test our app thoroughly.
 
 #### Visual Examples
 The following are examples of our app being built at different stages, while tackling this `TeaWhips` project. Here are just a few images showing our process.
@@ -238,11 +234,13 @@ WIREFRAMES (desktop and mobile)
 
 TeaWhips (preliminary process - screenshots of different pages in pre-production)
 
-<img src="?" alt="ABOUT" width="400" height="400">
+<img src="https://res.cloudinary.com/dgifdj6nx/image/upload/v1711563579/Screenshot_2024-03-27_at_2.19.09_PM_cwxtpl.png" alt="Landing Page" width="400" height="400">
+
+<img src="https://res.cloudinary.com/dgifdj6nx/image/upload/v1711563338/Screenshot_2024-03-26_at_1.28.47_PM_jzd6zg.png" alt="Review/Product Card" width="400" height="400">
 
 <img src="https://res.cloudinary.com/dgifdj6nx/image/upload/v1711471662/Screenshot_2024-03-26_at_12.47.10_PM_ewfd8c.png" alt="Login" width="400" height="400">
 
-<img src="?" alt="About" width="400" height="400">
+<img src="https://res.cloudinary.com/dgifdj6nx/image/upload/v1711563230/Screenshot_2024-03-27_at_2.12.48_PM_zl4z4s.png" alt="About" width="400" height="400">
 
 ERDs (tables)
 

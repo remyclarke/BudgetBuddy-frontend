@@ -2,7 +2,7 @@ import { Link, useParams, useOutletContext, useNavigate } from "react-router-dom
 import { useAuth } from "../Authorization/ProtectedRoute";
 import { useState, useEffect } from "react";
 
-const Review = ({ review, teapot_id, userInfo }) => {
+const Review = ({ review}) => {
   const user = useAuth()
   const [username, setUserName] = useState('');
   const [loading, setLoading] = useState(true);
