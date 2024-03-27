@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import Review from "./Review";
 
@@ -18,11 +18,18 @@ const ReviewsIndex = ({ teapot_id, reviews, setReviews, userInfo }) => {
     <section className="reviews-container">
       <h2>Reviews</h2>
       {reviews.length === 0 ? (
-        <Link to={"/"} style={{ margin: "20px" }}>
+        <Link to={`/teapots/${teapot_id}/new`} style={{ margin: "20px" }}>
           Be the first to add a review
         </Link>
       ) : (
-        reviews.map((review) => <Review key={review.id} review={review} userInfo={userInfo} />)
+        reviews.map((review) => (
+          <Review
+            key={review.id}
+            review={review}
+            teapot_id={teapot_id}
+            userInfo={userInfo}
+          />
+        ))
       )}
     </section>
   );

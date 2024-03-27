@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+.background {
+  background-color: goldenrod;
+}
+
 button {
   padding: 3px;
   background: white;

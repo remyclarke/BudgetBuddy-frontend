@@ -2,7 +2,7 @@ import { Link, useParams, useOutletContext, useNavigate } from "react-router-dom
 import { useAuth } from "../Authorization/ProtectedRoute";
 import { useState, useEffect } from "react";
 
-const Review = ({ review }) => {
+const Review = ({ review, teapot_id, userInfo }) => {
   const user = useAuth()
   const [username, setUserName] = useState('');
   const [loading, setLoading] = useState(true);
@@ -16,7 +16,6 @@ const Review = ({ review }) => {
   //     setLoading(false);
   //   }
   // }, [user]);
-
 
   const formattedDate = (reviewDate) => {
     const parts = reviewDate.split("-");
@@ -40,8 +39,8 @@ const Review = ({ review }) => {
     <div className="review-card">
       {/* <h3>Username: {username}</h3> */}
       <h3>Username: {review.username}</h3>
-      <p>Rating: {"⭐️".repeat(review.rating)}</p>
-      <p>{formattedDate(review.created_at)}</p>
+      <p className="center-grid">Rating: {"⭐️".repeat(review.rating)}</p>
+      <p className="center-grid">{formattedDate(review.created_at)}</p>
       <p>{review.content}</p>
       
         {user.isAuthenticated && (user.user.id === review.user_id) &&

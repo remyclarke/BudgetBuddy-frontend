@@ -1,0 +1,20 @@
+.background {
+  background-color: white;
+}
+
+.fof-details h1 {
+  color: black;
+}
+
+.fof-details {
+  margin: 0 auto;
+  text-align: center;
+  place-items: center;
+  margin-top: 10%;
+}
+
+.fof-details img {
+  margin: 0 auto;
+  width: 400px;
+  display: block;
+}

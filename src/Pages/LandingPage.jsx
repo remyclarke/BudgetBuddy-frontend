@@ -1,8 +1,9 @@
 import { useEffect } from "react";
+import "../index.css";
+import Home from "../Components/Common/Home";
 const URL = import.meta.env.VITE_BASE_URL;
 
 const LandingPage = () => {
-
   useEffect(() => {
     // Fetch call to the root route of your backend to get the CSRF token
     fetch(`${URL}`, {
@@ -16,8 +17,11 @@ const LandingPage = () => {
       .catch((error) => console.error("Error fetching CSRF token:", error));
   }, []);
 
-
-  return <div>LandingPage</div>;
+  return (
+    <div>
+      <Home />
+    </div>
+  );
 };
 
 export default LandingPage;
