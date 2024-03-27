@@ -25,19 +25,26 @@ const ReviewAddForm = ({username, reviews, setReviews}) => {
     event.preventDefault()
   
     const csrfToken = document.cookie.split("; ").find((row) => row.startsWith("XSRF-TOKEN=")).split("=")[1]; 
-    fetch(`${URL}/api/teapots/${teapot_id}/reviews`, {
-    method: 'POST',
-    headers: {
-        'Content-Type': 'application/json',
-        "CSRF-Token": csrfToken,
-    },
-    credentials: "include",
-    body: JSON.stringify(newReview),
-    })
-    .then((res) => res.json())
-    .then((data) => setReviews([data, ...reviews]))
-    .then(() => navigate(`/teapots/${teapot_id}`))
-    .catch((error) => console.error('catch', error))
+    if(newReview.content.length > 0 && newReview.rating.length > 0) {
+      fetch(`${URL}/api/teapots/${teapot_id}/reviews`, {
+      method: 'POST',
+      headers: {
+          'Content-Type': 'application/json',
+          "CSRF-Token": csrfToken,
+      },
+      credentials: "include",
+      body: JSON.stringify(newReview),
+      })
+      .then((res) => res.json())
+      .then((data) => {
+        setReviews([data, ...reviews])
+      })
+      .then(() => navigate(`/teapots/${teapot_id}`))
+      .catch((error) => console.error('catch', error))
+    } else {
+      alert(`Invalid Inputs`)
+      navigate(`/teapots/${teapot_id}`)
+    }
 
     }
     const handleTextChange = (event) => {
