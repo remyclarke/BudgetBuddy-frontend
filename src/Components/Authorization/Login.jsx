@@ -30,8 +30,9 @@ const Login = ({ setUserInfo }) => {
 
     try {
       const res = await fetch(`${URL}/api/auth/login`, options);
-      const data = await res.json();
-      setUserInfo(data);
+      const data = await res.json()
+      setUserInfo(data)
+
       // console.log(data)
 
       if (!res.ok) {

@@ -1,9 +1,10 @@
 import { useOutletContext, useNavigate } from 'react-router-dom'
 
-const Dashboard = () => {
+const Dashboard = ({userInfo}) => {
   const { user } = useOutletContext() // Access user data provided by the Outlet's context
   const navigate = useNavigate()
-
+  console.log(userInfo)
+  console.log(user)
   async function handleLogout() {
     const response = await fetch('http://localhost:3003/api/auth/logout', {
       method: 'GET', // or 'POST', depending on your backend

@@ -38,6 +38,7 @@ const TeapotDetails = ({ reviews, setReviews, userInfo }) => {
           </section>
         </div>
       )}
+      
       <ReviewsIndex
         teapot_id={teapot_id}
         reviews={reviews}

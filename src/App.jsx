@@ -13,12 +13,15 @@ import LandingPage from "./Pages/LandingPage";
 import Form from "./Pages/Form";
 import ReviewAddForm from "./Components/Reviews/ReviewAddForm";
 import NavBar from "./Components/Common/NavBar";
+import { ReviewEditForm } from "./Components/Reviews/ReviewEditForm";
+
 
 function App() {
   const [reviews, setReviews] = useState([]);
 
   const [userInfo, setUserInfo] = useState({});
 
+  let variable;
   return (
     <>
       <NavBar />
@@ -52,26 +55,14 @@ function App() {
         />
         <Route path="/about" element={<About />} />
         <Route path="*" element={<FourOFour />} />
-        <Route element={<ProtectedRoute />}>
-          {/* Place protected routes here */}
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route
-            path="/teapots/:teapot_id/new"
-            element={
-              <ReviewAddForm
-                userInfo={userInfo}
-                reviews={reviews}
-                setReviews={setReviews}
-              />
-            }
-          />
-          <Route
-            path="/teapots/:teapot_id/edit/:review_id"
-            element={<Form />}
-          />
-        </Route>
-      </Routes>
-    </>
+      <Route element={<ProtectedRoute />}>
+        {/* Place protected routes here */}
+        <Route path="/dashboard" element={<Dashboard userInfo={userInfo}/>} />
+        <Route path="/teapots/:teapot_id/new" element={<ReviewAddForm userInfo={userInfo} reviews={reviews} setReviews={setReviews}/>} />
+        <Route path="/teapots/:teapot_id/edit/:review_id" element={<ReviewEditForm reviews={reviews} setReviews={setReviews}/>} />
+      </Route>
+    </Routes>
+     </>
   );
 }
 
