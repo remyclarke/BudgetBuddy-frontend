@@ -14,13 +14,17 @@
   gap: 10px;
   padding: 10px;
   place-items: center;
+  background-color: white;
 }
 
 .show-container {
+  margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  place-items: center;
-  margin: 30px;
+  gap: 40px;
+  place-items: left;
+  width: 85%;
+  margin-top: 30px;
 }
 
 .info-section {
@@ -37,18 +41,23 @@
 .image-section img {
   border: 2px solid black;
   border-radius: 20px;
+  width: 400px;
+  height: 300px;
 }
+
+/* .image-section {
+  padding-top: 5px;
+} */
 
 .reviews-container {
   margin: 0 auto;
   display: block;
-  margin-right: 50px;
-  margin-left: 20px;
-  /* grid-template-columns: 1fr; */
+  /* margin-left: 0; */
+  width: 85%;
 }
 
 .reviews-container h2 {
-  margin: 20px;
+  margin-top: 20px;
 }
 
 .review-card {
@@ -56,8 +65,7 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 10px;
   border: 2px solid black;
-  margin: 20px;
-  margin-right: 50px;
+  margin-top: 20px;
   padding: 10px;
   width: 100%;
   border-radius: 20px;

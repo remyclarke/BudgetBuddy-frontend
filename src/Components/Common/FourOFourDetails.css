@@ -1,3 +1,11 @@
+body {
+  background-color: white;
+}
+
+.fof-details h1 {
+  color: black;
+}
+
 .fof-details {
   margin: 0 auto;
   text-align: center;
