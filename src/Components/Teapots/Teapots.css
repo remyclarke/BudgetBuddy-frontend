@@ -95,6 +95,20 @@ h2 {
   }
 }
 
+.search-input {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 25px;
+  place-items: center;
+}
+
+.input-box {
+  height: 30px;
+  width: 250px;
+  border-radius: 5px;
+  text-align: center;
+}
+
 @media (max-width: 500px) {
   .teapot-container {
     grid-template-columns: 1fr;
