@@ -17,7 +17,7 @@
   <b>Brenda Soto:</b> <a href="https://github.com/BSoto85">GitHub</a>
 </p>
 <p align="center">
-  <img src="https://res.cloudinary.com/dgifdj6nx/image/upload/t_Profile/v1711388131/TeaWhips-Brenda_ybojtq.png" alt="Brenda!" width="300" height="300">
+  <img src="https://res.cloudinary.com/dgifdj6nx/image/upload/t_Profile/v1711480709/TeaWhips-VPKensington_ph7mqk.png" alt="Brenda!" width="300" height="300">
 </p>
 
 
@@ -25,7 +25,7 @@
   <b>Kenneth Cabral:</b> <a href="https://github.com/KenCab123">GitHub</a>
 </p>
 <p align="center">
-  <img src="https://res.cloudinary.com/dgifdj6nx/image/upload/t_Profile/v1711480425/TeaWhips-HotRod_k7i3hu.png" alt="Ken!" width="300" height="300">
+  <img src="https://res.cloudinary.com/dgifdj6nx/image/upload/t_Profile/v1711049426/TeaWhip5_ywp9fs.png" alt="Ken!" width="300" height="300">
 </p>
 
 
@@ -33,7 +33,7 @@
   <b>Marlon Regis:</b> <a href="https://github.com/MarlonPelau">GitHub</a>
 </p>
 <p align="center">
-  <img src="https://res.cloudinary.com/dgifdj6nx/image/upload/t_Profile/v1711395991/IMG_77381_wt6lqt.png" alt="Marlon!" width="300" height="300">
+  <img src="https://res.cloudinary.com/dgifdj6nx/image/upload/t_Profile/v1711051183/TeaWhip10_zettiw.png" alt="Marlon!" width="300" height="300">
 
 
 Welcome to our quirky world of teapots disguised as vehicles! Our "Code 418" team of `Anita, Brenda, Kenneth & Marlon`, created a Full Stack application, `*TeaWhips*` using ReactJS, ExpressJS, PostgresSQL, pg-promise. `TeaWhips` is an e-commerce platform specializing in teapots shaped like vehicles. The app allows users to browse, purchase, review and enjoy a unique collection of whimsical teapot designs. Users can explore various vehicle-inspired teapots and infuse their tea time with a touch of novelty and personality. The app caters to tea/teapot enthusiasts who appreciate creativity and novelty in their tea accessories, offering a curated selection of teapots designed to delight and inspire.
