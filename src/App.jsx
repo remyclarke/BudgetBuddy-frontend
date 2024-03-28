@@ -15,13 +15,14 @@ import { EditForm } from "./Pages/EditForm";
 
 function App() {
   const [reviews, setReviews] = useState([]);
+  const [toggleLogin, setToggleLogin] = useState(false)
 
   return (
     <>
-      <NavBar />
+      <NavBar toggleLogin={toggleLogin} setToggleLogin={setToggleLogin}/>
       <Routes>
-        <Route path="/" element={<LandingPage />} />
-        <Route path="/login" element={<Login />} />
+        <Route path="/" element={<LandingPage setToggleLogin={setToggleLogin} toggleLogin={toggleLogin}/>} />
+        <Route path="/login" element={<Login setToggleLogin={setToggleLogin} toggleLogin={toggleLogin} />} />
         <Route path="/register" element={<Register />} />
         {/* Names of routes? */}
         <Route path="/teapots" element={<Index />} />

@@ -4,9 +4,9 @@ import { Navigate, Outlet } from "react-router-dom";
 const URL = import.meta.env.VITE_BASE_URL;
 
 export const useAuth = () => {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const [user, setUser] = useState();
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   useEffect(() => {
     const checkAuth = async () => {
