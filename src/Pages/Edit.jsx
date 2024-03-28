@@ -1,7 +1,7 @@
 import { ReviewEditForm } from "../Components/Reviews/ReviewEditForm";
 import "./Form.css";
 
-const Form = () => {
+const Edit = () => {
   return (
     <div>
       <ReviewEditForm />
@@ -9,4 +9,4 @@ const Form = () => {
   );
 };
 
-export default Form;
+export default Edit;

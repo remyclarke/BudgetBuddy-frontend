@@ -1,11 +1,11 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import {
   useNavigate,
   Link,
   useParams,
   useOutletContext,
 } from "react-router-dom";
-const ReviewAddForm = ({ username, reviews, setReviews }) => {
+const ReviewAddForm = ({ reviews, setReviews }) => {
   const { teapot_id } = useParams();
   const { user } = useOutletContext();
   const navigate = useNavigate();
@@ -67,19 +67,21 @@ const ReviewAddForm = ({ username, reviews, setReviews }) => {
   return (
     <div>
       {/* {children} */}
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="form-container">
         <label htmlFor="content">Review:</label>
         <textarea
+          style={{ width: "300px", height: "100px" }}
           id="content"
           type="text"
           name="content"
           value={newReview.content}
           placeholder="What do you think..."
           onChange={handleTextChange}
-          // required
+          required
         />
         <label htmlFor="rating">Rating:</label>
         <input
+          className="rating-input"
           id="rating"
           type="number"
           name="rating"
@@ -88,12 +90,11 @@ const ReviewAddForm = ({ username, reviews, setReviews }) => {
           step="1"
           value={newReview.rating}
           onChange={handleTextChange}
-          // required
+          required
         />
-        <br />
-        <input type="submit" />
+        <input className="submit-button" type="submit" />
+        <Link to={`/teapots/${teapot_id}`}>Cancel</Link>
       </form>
-      <Link to={`/teapots/${teapot_id}`}>Cancel</Link>
     </div>
   );
 };

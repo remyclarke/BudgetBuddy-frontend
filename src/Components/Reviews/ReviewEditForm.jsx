@@ -85,19 +85,21 @@ export const ReviewEditForm = ({ setReviews, reviews, userInfo }) => {
   return (
     <div>
       {/* {children} */}
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="form-container">
         <label htmlFor="content">Review:</label>
         <textarea
+          style={{ width: "300px", height: "100px" }}
           id="content"
           type="text"
           name="content"
           value={updatedReview.content}
           placeholder="What do you think..."
           onChange={handleTextChange}
-          // required
+          required
         />
         <label htmlFor="rating">Rating:</label>
         <input
+          className="rating-input"
           id="rating"
           type="number"
           name="rating"
@@ -106,12 +108,11 @@ export const ReviewEditForm = ({ setReviews, reviews, userInfo }) => {
           step="1"
           value={updatedReview.rating}
           onChange={handleTextChange}
-          // required
+          required
         />
-        <br />
-        <input type="submit" />
+        <input className="submit-button" type="submit" />
+        <Link to={`/teapots/${teapot_id}`}>Cancel</Link>
       </form>
-      <Link to={`/teapots/${teapot_id}`}>Cancel</Link>
     </div>
   );
 };
