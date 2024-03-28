@@ -24,21 +24,21 @@ export default function About() {
                 <a href= "https://github.com/BSoto85" className ="github-link" target='_blank'>
                 <img src="https://res.cloudinary.com/dgifdj6nx/image/upload/v1711388131/TeaWhips-Brenda_ybojtq.jpg" alt="Brenda!" width="300" height="300"/>
                 </a>
-            <p className="fun-fact"> <b>Facts:</b> "Brenda Soto is an aspiring full-stack web developer with a rich background in veterinary technology. Transitioning into tech, she brings a unique perspective and problem-solving skills honed over years of hands-on experience. Currently enrolled in Pursuit's 12-month mentorship program, Brenda is passionately learning the intricacies of web development, from front-end design to back-end logic. Her journey is a testament to her adaptability and eagerness to embrace new challenges in the tech world."</p>
+            <p className="fun-fact"> <b>Facts:</b> "Brenda Soto, a former veterinary technician, is now an aspiring full-stack web developer enrolled in Pursuit's mentorship program. She blends her rich background in problem-solving with a passion for learning web development, showcasing adaptability and eagerness for new challenges in tech."</p>
         </li>
         <li className="developer">
         <h2>Kenneth</h2>
                 <a href= "https://github.com/KenCab123" className ="github-link" target='_blank'>
                 <img src="https://res.cloudinary.com/dgifdj6nx/image/upload/v1711480425/TeaWhips-HotRod_k7i3hu.avif" alt="Kenneth!" width="300" height="300"/>
                 </a>
-                <p className="fun-fact"> <b>Facts:</b> "?" </p>
+                <p className="fun-fact"> <b>Facts:</b> "Kenneth Cabral is a full stack web developer who loves working with others to create applications and solve problems. He enjoys collaborating with teammates by using his technical skills to tackle challenges together, and his dedication to teamwork delivers innovative solutions to meet user needs effectively." </p>
         </li>
         <li className="developer">
         <h2>Marlon</h2>
                 <a href= "https://github.com/MarlonPelau" className ="github-link" target='_blank'>
                 <img src="https://res.cloudinary.com/dgifdj6nx/image/upload/v1711051183/TeaWhip10_zettiw.webp" alt="Marlon!" width="300" height="300"/>
                 </a>
-                <p className="fun-fact"> <b>Facts:</b> "Moving into the world of tech at Pursuit.org, I've been learning many different languages and methods to become a great Fullstack engineer, web designer or software developer. For me, this pivot away from living in LA as a media/marketing professional, creative writer/blogger and music journalist, has been an adjustment and challenge living in NYC, to say the least. However, I'm well on my way into finding a great fusion, including my past expertise in this newfound journey!"</p>
+                <p className="fun-fact"> <b>Facts:</b> "Moving into the world of tech at Pursuit.org, I've been learning the many different languages and methods to become a great Fullstack engineer, web designer/software developer. This pivot away from media, marketing and creative journalism, is an opportunity to find a possible unique fusion, to merge my past expertise with!"</p>
         </li>
       </ul>
     </div>
