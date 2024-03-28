@@ -70,7 +70,7 @@ const ReviewAddForm = ({ reviews, setReviews }) => {
       <form onSubmit={handleSubmit} className="form-container">
         <label htmlFor="content">Review:</label>
         <textarea
-          style={{ width: "300px", height: "100px" }}
+          style={{ width: "90%", height: "90%", marginTop: "20px" }}
           id="content"
           type="text"
           name="content"
@@ -92,8 +92,10 @@ const ReviewAddForm = ({ reviews, setReviews }) => {
           onChange={handleTextChange}
           required
         />
-        <input className="submit-button" type="submit" />
-        <Link to={`/teapots/${teapot_id}`}>Cancel</Link>
+        <section className="form-button-section">
+          <input className="submit-button" type="submit" />
+          <Link to={`/teapots/${teapot_id}`}>Cancel</Link>
+        </section>
       </form>
     </div>
   );

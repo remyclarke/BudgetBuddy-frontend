@@ -1,7 +1,7 @@
 .form-container {
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 0.5fr 1fr;
+  grid-template-columns: 1fr 3fr;
   gap: 10px;
   border: 2px solid black;
   border-radius: 20px;
@@ -24,11 +24,17 @@
   margin: 5px;
 }
 
+.form-button-section {
+  grid-row: 3;
+  grid-column: 2/3;
+}
+
 .submit-button {
   padding: 5px;
   border-radius: 10px;
   font-size: 16px;
   background-color: white;
+  margin-right: 10px;
 }
 
 .submit-button:hover {
@@ -37,8 +43,8 @@
 }
 
 .rating-input {
-  width: 50px;
-  height: 30px;
+  width: 70px;
+  height: 50px;
   text-align: center;
   font-size: 16px;
   border-radius: 10px;
