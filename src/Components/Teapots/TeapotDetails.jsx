@@ -27,11 +27,13 @@ const TeapotDetails = ({ reviews, setReviews}) => {
             <h3>{teapot.name}</h3>
             <p>Price: ${teapot.price}.00</p>
             <p>Description: {teapot.description}</p>
-            <p>Material: {teapot.material}</p>
+            <p>{teapot.material && `Material: ${teapot.material}`}</p>
+            {teapot.capacity && 
             <p>
-              Capacity: {teapot.capacity} cup
-              {teapot.capacity === 1 ? "" : "s"}
+            Capacity: {teapot.capacity} cup
+            {teapot.capacity === 1 ? "" : "s"}
             </p>
+            }
             <Link to={`/teapots/${teapot_id}/new`}>
               <button>Add Review</button>
             </Link>

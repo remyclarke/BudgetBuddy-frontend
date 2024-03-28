@@ -34,7 +34,7 @@ const NavBar = ({toggleLogin, setToggleLogin}) => {
         <Link to={"/about"}>
           <p className="p1">About</p>
         </Link>
-        <Link onClick={handleClick} to={!toggleLogin ? "/login" : "/dashboard"} style={{ textDecoration: "none", color: "black" }}>
+        <Link onClick={handleClick} to="/login" style={{ textDecoration: "none", color: "black" }}>
           <p className="p2">{ !toggleLogin ? 'Login' : 'Logout'}</p>
         </Link>
       </article>

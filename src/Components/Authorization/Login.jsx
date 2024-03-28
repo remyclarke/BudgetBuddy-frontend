@@ -63,8 +63,6 @@ const Login = ({setToggleLogin}) => {
 
   return (
     <div>
-      {/* <h2>Use the DemoUser button to login and save time during demo</h2> */}
-      {/* <h3> Remove the 'br' tags and these instructions if you use this code</h3> */}
       <br />
       <button onClick={handleDemoSignIn}>Demo User</button>
       <br />
