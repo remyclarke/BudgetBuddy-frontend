@@ -18,3 +18,8 @@ button:hover {
   background-color: maroon;
   color: white;
 }
+
+a {
+  text-decoration: none;
+  color: black;
+}

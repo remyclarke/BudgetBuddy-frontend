@@ -4,7 +4,7 @@ import Review from "./Review";
 
 const URL = import.meta.env.VITE_BASE_URL;
 
-const ReviewsIndex = ({ teapot_id, reviews, setReviews, userInfo }) => {
+const ReviewsIndex = ({ teapot_id, reviews, setReviews }) => {
 
   useEffect(() => {
     fetch(`${URL}/api/teapots/${teapot_id}/reviews`, {
@@ -26,8 +26,8 @@ const ReviewsIndex = ({ teapot_id, reviews, setReviews, userInfo }) => {
           <Review
             key={review.id}
             review={review}
-            teapot_id={teapot_id}
-            userInfo={userInfo}
+            reviews={reviews}
+            setReviews={setReviews}
           />
         ))
       )}

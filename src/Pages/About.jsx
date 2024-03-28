@@ -1,14 +1,10 @@
-import React from "react";
-import "./About.css"
-
-
-// const About = () => {
-//   return <div>About</div>;
-// };
+import AboutDevs from "../Components/Common/AboutDevs";
+import "./About.css";
 
 export default function About() {
   return (
     <div className="about-container">
+
       <h1 className="about-dev">About Code 418 🫖 Developers</h1>
       <ul className="developer-list">
         <li className="developer">
@@ -41,6 +37,9 @@ export default function About() {
                 <p className="fun-fact"> <b>Facts:</b> "Moving into the world of tech at Pursuit.org, I've been learning the many different languages and methods to become a great Fullstack engineer, web designer/software developer. This pivot away from media, marketing and creative journalism, is an opportunity to find a possible unique fusion, to merge my past expertise with!"</p>
         </li>
       </ul>
+
+      <AboutDevs />
+
     </div>
   );
 }
