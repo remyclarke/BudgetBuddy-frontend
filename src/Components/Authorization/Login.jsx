@@ -98,6 +98,9 @@ const Login = ({setToggleLogin}) => {
       <p>
         No Account? <Link to="/register">Register</Link>
       </p>
+      <Link to={'/teapots'}>
+        <button>Back</button>
+      </Link>
     </div>
   );
 };

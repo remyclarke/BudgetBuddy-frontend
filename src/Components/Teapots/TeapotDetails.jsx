@@ -44,6 +44,10 @@ const TeapotDetails = ({ reviews, setReviews}) => {
         reviews={reviews}
         setReviews={setReviews}
       />
+
+      <Link to={'/teapots'}>
+        <button>Back</button>
+      </Link>
     </div>
   );
 };
