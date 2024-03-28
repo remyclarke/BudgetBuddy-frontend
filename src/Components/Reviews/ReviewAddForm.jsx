@@ -1,9 +1,14 @@
-import { useState, useEffect } from 'react'
-import { useNavigate, Link, useParams, useOutletContext } from "react-router-dom";
-const ReviewAddForm = ({username, reviews, setReviews}) => {
-  const { teapot_id } = useParams()
-  const { user } = useOutletContext()
-  const navigate = useNavigate()
+import { useState } from "react";
+import {
+  useNavigate,
+  Link,
+  useParams,
+  useOutletContext,
+} from "react-router-dom";
+const ReviewAddForm = ({ reviews, setReviews }) => {
+  const { teapot_id } = useParams();
+  const { user } = useOutletContext();
+  const navigate = useNavigate();
   const URL = import.meta.env.VITE_BASE_URL;
 
   const currentDate = new Date();
@@ -12,14 +17,12 @@ const ReviewAddForm = ({username, reviews, setReviews}) => {
   const day = currentDate.getDate();
   // console.log(`${year}-${month}-${day}`);
 
-
   const [newReview, setNewReview] = useState({
-    content: '',
-    rating: '',
+    content: "",
+    rating: "",
     user_id: user.id,
     created_at: `${year}-${month}-${day}`,
-  })
-
+  });
 
   const handleSubmit = (event) => {
     event.preventDefault()
@@ -46,21 +49,13 @@ const ReviewAddForm = ({username, reviews, setReviews}) => {
       navigate(`/teapots/${teapot_id}`)
     }
 
-    }
-    const handleTextChange = (event) => {
-      setNewReview({
-        ...newReview,
-        [event.target.id]: event.target.value,
-      })
-    }
   return (
-    
     <div>
-    {/* {children} */}
-    <form onSubmit={handleSubmit}>
-      <div>
+      {/* {children} */}
+      <form onSubmit={handleSubmit} className="form-container">
         <label htmlFor="content">Review:</label>
         <textarea
+          style={{ width: "90%", height: "90%", marginTop: "20px" }}
           id="content"
           type="text"
           name="content"
@@ -69,11 +64,9 @@ const ReviewAddForm = ({username, reviews, setReviews}) => {
           onChange={handleTextChange}
           required
         />
-      </div>
-
-      <div>
         <label htmlFor="rating">Rating:</label>
         <input
+          className="rating-input"
           id="rating"
           type="number"
           name="rating"
@@ -84,14 +77,14 @@ const ReviewAddForm = ({username, reviews, setReviews}) => {
           onChange={handleTextChange}
           required
         />
-      </div>
-      <br />
-      <input type="submit" />
-    </form>
-    <Link to={`/teapots/${teapot_id}`}>Cancel</Link>
-  </div>
-  
-  )
-}
+        <section className="form-button-section">
+          <input className="submit-button" type="submit" />
+          <Link to={`/teapots/${teapot_id}`}>Cancel</Link>
+        </section>
+      </form>
+    </div>
+  );
+};
+
 
 export default ReviewAddForm;

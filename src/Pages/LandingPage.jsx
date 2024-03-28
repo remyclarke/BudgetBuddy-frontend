@@ -1,7 +1,5 @@
-import { useEffect } from "react";
 import "../index.css";
 import Home from "../Components/Common/Home";
-const URL = import.meta.env.VITE_BASE_URL;
 
 const LandingPage = ({setToggleLogin}) => {
   useEffect(() => {
@@ -17,7 +15,6 @@ const LandingPage = ({setToggleLogin}) => {
       })
       .catch((error) => console.error("Error fetching CSRF token:", error));
   }, []);
-
   return (
     <div>
       <Home />
