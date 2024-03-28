@@ -1,5 +1,6 @@
 import "../index.css";
 import Home from "../Components/Common/Home";
+import { useEffect } from "react";
 
 const LandingPage = ({setToggleLogin}) => {
   useEffect(() => {
