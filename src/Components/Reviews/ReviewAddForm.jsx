@@ -25,44 +25,29 @@ const ReviewAddForm = ({ reviews, setReviews }) => {
   });
 
   const handleSubmit = (event) => {
-    event.preventDefault();
-    const csrfToken = document.cookie
-      .split("; ")
-      .find((row) => row.startsWith("XSRF-TOKEN="))
-      .split("=")[1];
-    fetch(`${URL}/api/teapots/${teapot_id}/reviews`, {
-      method: "POST",
+    event.preventDefault()
+  
+    const csrfToken = document.cookie.split("; ").find((row) => row.startsWith("XSRF-TOKEN=")).split("=")[1]; 
+    if(newReview.content.length > 0 && newReview.rating.length > 0) {
+      fetch(`${URL}/api/teapots/${teapot_id}/reviews`, {
+      method: 'POST',
       headers: {
-        "Content-Type": "application/json",
-        "CSRF-Token": csrfToken,
+          'Content-Type': 'application/json',
+          "CSRF-Token": csrfToken,
       },
       credentials: "include",
       body: JSON.stringify(newReview),
-    })
+      })
       .then((res) => res.json())
-      .then((data) => setReviews([data, ...reviews]))
+      .then((data) => {
+        setReviews([data, ...reviews])
+      })
       .then(() => navigate(`/teapots/${teapot_id}`))
-      .catch((error) => console.error("catch", error));
-  };
-  const handleTextChange = (event) => {
-    setNewReview({
-      ...newReview,
-      [event.target.id]: event.target.value,
-    });
-  };
-
-  // useEffect(() => {
-  //   // Fetch call to the root route of your backend to get the CSRF token
-  //   fetch(`${URL}`, {
-  //     credentials: "include", // Important: Include cookies in the request
-  //   })
-  //     .then((response) => {
-  //       if (response.ok) {
-  //         console.log("XSRF-Token cookie should now be set.");
-  //       }
-  //     })
-  //     .catch((error) => console.error("Error fetching CSRF token:", error));
-  // }, []);
+      .catch((error) => console.error('catch', error))
+    } else {
+      alert(`Invalid Inputs`)
+      navigate(`/teapots/${teapot_id}`)
+    }
 
   return (
     <div>
@@ -99,6 +84,8 @@ const ReviewAddForm = ({ reviews, setReviews }) => {
       </form>
     </div>
   );
+  }
 };
+
 
 export default ReviewAddForm;

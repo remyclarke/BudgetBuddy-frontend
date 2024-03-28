@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 const URL = import.meta.env.VITE_BASE_URL;
 
 // console.log(`URL`, URL)
-const Login = () => {
+const Login = ({setToggleLogin, toggleLogin, setIsAuthenticated}) => {
   const [user, setUser] = useState({ username: "", password: "" });
   const navigate = useNavigate();
 
@@ -51,7 +51,7 @@ const Login = () => {
       alert("You must enter a username and password");
       return;
     }
-
+    setToggleLogin(true)
     postFetch(user);
   }
 
@@ -59,6 +59,7 @@ const Login = () => {
   async function handleDemoSignIn(e) {
     e.preventDefault();
     const user = { username: "demo", password: "password" };
+    setToggleLogin(!toggleLogin)
     postFetch(user);
   }
 
@@ -66,10 +67,10 @@ const Login = () => {
 
   return (
     <div>
-      <h2>Use the DemoUser button to login and save time during demo</h2>
-      <h3> Remove the 'br' tags and these instructions if you use this code</h3>
-      <button onClick={handleDemoSignIn}>Demo User</button>
+      {/* <h2>Use the DemoUser button to login and save time during demo</h2> */}
+      {/* <h3> Remove the 'br' tags and these instructions if you use this code</h3> */}
       <br />
+      <button onClick={handleDemoSignIn}>Demo User</button>
       <br />
       <br />
       <h4>Login</h4>
