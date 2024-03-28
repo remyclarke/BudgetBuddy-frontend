@@ -28,62 +28,74 @@ const ReviewAddForm = ({ reviews, setReviews }) => {
     setNewReview({
       ...newReview,
       [event.target.id]: event.target.value,
-    })
-  }
+    });
+  };
 
   const handleSubmit = (event) => {
-    event.preventDefault()
-  
-    const csrfToken = document.cookie.split("; ").find((row) => row.startsWith("XSRF-TOKEN=")).split("=")[1]; 
-    if(newReview.content.length > 0 && newReview.rating.length > 0) {
+    event.preventDefault();
+
+    const csrfToken = document.cookie
+      .split("; ")
+      .find((row) => row.startsWith("XSRF-TOKEN="))
+      .split("=")[1];
+    if (newReview.content.length > 0 && newReview.rating.length > 0) {
       fetch(`${URL}/api/teapots/${teapot_id}/reviews`, {
-      method: 'POST',
-      headers: {
-          'Content-Type': 'application/json',
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
           "CSRF-Token": csrfToken,
-      },
-      credentials: "include",
-      body: JSON.stringify(newReview),
+        },
+        credentials: "include",
+        body: JSON.stringify(newReview),
       })
-      .then((res) => res.json())
-      .then((data) => {
-        setReviews([data, ...reviews])
-      })
-      .then(() => navigate(`/teapots/${teapot_id}`))
-      .catch((error) => console.error('catch', error))
+        .then((res) => res.json())
+        .then((data) => {
+          setReviews([data, ...reviews]);
+        })
+        .then(() => navigate(`/teapots/${teapot_id}`))
+        .catch((error) => console.error("catch", error));
     } else {
-      alert(`Invalid Inputs`)
-      navigate(`/teapots/${teapot_id}`)
+      alert(`Invalid Inputs`);
+      navigate(`/teapots/${teapot_id}`);
     }
-  }
+  };
   return (
     <div>
       {/* {children} */}
       <form onSubmit={handleSubmit} className="form-container">
-        <label htmlFor="content">Review:</label>
-        <textarea
-          style={{ width: "90%", height: "90%", marginTop: "20px" }}
-          id="content"
-          type="text"
-          name="content"
-          value={newReview.content}
-          placeholder="What do you think..."
-          onChange={handleTextChange}
-          required
-        />
-        <label htmlFor="rating">Rating:</label>
-        <input
-          className="rating-input"
-          id="rating"
-          type="number"
-          name="rating"
-          min="1"
-          max="5"
-          step="1"
-          value={newReview.rating}
-          onChange={handleTextChange}
-          required
-        />
+        <section>
+          <label htmlFor="content">Review:</label>
+          <textarea
+            style={{
+              width: "90%",
+              height: "90%",
+              marginTop: "20px",
+              border: "2px solid black",
+              fontSize: "20px",
+            }}
+            id="content"
+            type="text"
+            name="content"
+            value={newReview.content}
+            placeholder="What do you think..."
+            onChange={handleTextChange}
+            required
+          />
+        </section>
+        <section className="rating-input">
+          <label htmlFor="rating">Rating:</label>
+          <input
+            id="rating"
+            type="number"
+            name="rating"
+            min="1"
+            max="5"
+            step="1"
+            value={newReview.rating}
+            onChange={handleTextChange}
+            required
+          />
+        </section>
         <section className="form-button-section">
           <input className="submit-button" type="submit" />
           <Link to={`/teapots/${teapot_id}`}>Cancel</Link>
@@ -92,6 +104,5 @@ const ReviewAddForm = ({ reviews, setReviews }) => {
     </div>
   );
 };
-
 
 export default ReviewAddForm;
