@@ -84,6 +84,7 @@ const ReviewAddForm = ({ reviews, setReviews }) => {
       </form>
     </div>
   );
+  }
 };
 
 
