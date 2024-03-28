@@ -86,7 +86,10 @@ To run the app locally, follow these steps:
 
 3. Install dependencies: npm i
 
-4. Start the development server: npm start
+4. ```npm run dev```
+
+**Access the Dashboard**: Open your web browser and go to http://localhost:3000/ to access our `TeaWhips` app.
+
 
 ## ROUTES
 We used A LOT (12!) of Routes for the following files below:
