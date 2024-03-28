@@ -86,31 +86,39 @@ const ReviewEditForm = ({ setReviews, reviews }) => {
     <div>
       {/* {children} */}
       <form onSubmit={handleSubmit} className="form-container">
-        <label htmlFor="content">Review:</label>
-        <textarea
-          style={{ width: "90%", height: "90%", marginTop: "20px" }}
-          id="content"
-          type="text"
-          name="content"
-          value={updatedReview.content}
-          placeholder="What do you think..."
-          onChange={handleTextChange}
-          required
-        />
-      
-        <label htmlFor="rating">Rating:</label>
-        <input
-          className="rating-input"
-          id="rating"
-          type="number"
-          name="rating"
-          min="1"
-          max="5"
-          step="1"
-          value={updatedReview.rating}
-          onChange={handleTextChange}
-          required
-        />
+        <section>
+          <label htmlFor="content">Review:</label>
+          <textarea
+            style={{
+              width: "90%",
+              height: "90%",
+              marginTop: "20px",
+              border: "2px solid black",
+              fontSize: "20px",
+            }}
+            id="content"
+            type="text"
+            name="content"
+            value={updatedReview.content}
+            placeholder="What do you think..."
+            onChange={handleTextChange}
+            required
+          />
+        </section>
+        <section className="rating-input">
+          <label htmlFor="rating">Rating:</label>
+          <input
+            id="rating"
+            type="number"
+            name="rating"
+            min="1"
+            max="5"
+            step="1"
+            value={updatedReview.rating}
+            onChange={handleTextChange}
+            required
+          />
+        </section>
         <section className="form-button-section">
           <input className="submit-button" type="submit" />
           <Link to={`/teapots/${teapot_id}`}>Cancel</Link>

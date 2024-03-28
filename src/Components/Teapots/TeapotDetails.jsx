@@ -5,7 +5,7 @@ import "./Teapots.css";
 
 const URL = import.meta.env.VITE_BASE_URL;
 
-const TeapotDetails = ({ reviews, setReviews}) => {
+const TeapotDetails = ({ reviews, setReviews }) => {
   const [teapot, setTeapot] = useState();
 
   const { teapot_id } = useParams();
@@ -25,31 +25,36 @@ const TeapotDetails = ({ reviews, setReviews}) => {
           </section>
           <section className="info-section">
             <h3>{teapot.name}</h3>
-            <p>Price: ${teapot.price}.00</p>
-            <p>Description: {teapot.description}</p>
-            <p>{teapot.material && `Material: ${teapot.material}`}</p>
-            {teapot.capacity && 
             <p>
-            Capacity: {teapot.capacity} cup
-            {teapot.capacity === 1 ? "" : "s"}
+              <span>Price:</span> ${teapot.price}.00
             </p>
-            }
-            <Link to={`/teapots/${teapot_id}/new`}>
-              <button>Add Review</button>
-            </Link>
+            <p>
+              <span>Description:</span> {teapot.description}
+            </p>
+            <p>
+              <span>Material:</span> {teapot.material}
+            </p>
+            <p>
+              <span>Capacity:</span> {teapot.capacity} cup
+              {teapot.capacity === 1 ? "" : "s"}
+            </p>
+            <article>
+              <Link to={`/teapots/${teapot_id}/new`}>
+                <button>Add Review</button>
+              </Link>
+              <Link to={"/teapots"} style={{ textAlign: "end" }}>
+                <button>Back</button>
+              </Link>
+            </article>
           </section>
         </div>
       )}
-      
+
       <ReviewsIndex
         teapot_id={teapot_id}
         reviews={reviews}
         setReviews={setReviews}
       />
-
-      <Link to={'/teapots'}>
-        <button>Back</button>
-      </Link>
     </div>
   );
 };

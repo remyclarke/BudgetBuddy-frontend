@@ -1,9 +1,10 @@
 import { useNavigate, Link } from "react-router-dom";
 import { useState, useEffect } from "react";
+import "./Login.css";
 const URL = import.meta.env.VITE_BASE_URL;
 
 // console.log(`URL`, URL)
-const Login = ({setToggleLogin}) => {
+const Login = ({ setToggleLogin }) => {
   const [user, setUser] = useState({ username: "", password: "" });
   const navigate = useNavigate();
 
@@ -30,14 +31,14 @@ const Login = ({setToggleLogin}) => {
 
     try {
       const res = await fetch(`${URL}/api/auth/login`, options);
-      const data = await res.json()
+      const data = await res.json();
 
       if (!res.ok) {
         alert("Login failed");
         setUser({ username: "", password: "" });
         throw new Error("Registration failed");
       }
-      await setToggleLogin(true)
+      await setToggleLogin(true);
       navigate("/teapots");
     } catch (error) {
       console.error("Error during registration:", error);
@@ -62,43 +63,44 @@ const Login = ({setToggleLogin}) => {
   }
 
   return (
-    <div>
-      <br />
+    <div className="login-container">
       <button onClick={handleDemoSignIn}>Demo User</button>
-      <br />
-      <br />
-      <h4>Login</h4>
+      <h3>Login</h3>
       <form onSubmit={handleSubmit}>
-        <label htmlFor="username">
-          <input
-            id="username"
-            value={user.username}
-            type="text"
-            placeholder="username"
-            autoComplete="username"
-            onChange={handleChange}
-          />
-        </label>
-        <br />
-        <label htmlFor="password">
-          <input
-            id="password"
-            value={user.password}
-            type="password"
-            placeholder="password"
-            onChange={handleChange}
-            autoComplete="current-password"
-          />
-        </label>
-        <br />
-        <button>Submit</button>
+        <section>
+          <label htmlFor="username">
+            <input
+              id="username"
+              value={user.username}
+              type="text"
+              placeholder="username"
+              autoComplete="username"
+              onChange={handleChange}
+            />
+          </label>
+        </section>
+        <section>
+          <label htmlFor="password">
+            <input
+              id="password"
+              value={user.password}
+              type="password"
+              placeholder="password"
+              onChange={handleChange}
+              autoComplete="current-password"
+            />
+          </label>
+        </section>
+        <section className="button-section">
+          <button>Submit</button>
+          <Link to={"/teapots"}>
+            <button>Back</button>
+          </Link>
+        </section>
       </form>
       <p>
         No Account? <Link to="/register">Register</Link>
       </p>
-      <Link to={'/teapots'}>
-        <button>Back</button>
-      </Link>
     </div>
   );
 };
