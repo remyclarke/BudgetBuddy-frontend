@@ -1,7 +1,7 @@
 import {
   Link,
   useParams,
-  useOutletContext,
+  // useOutletContext,
   useNavigate,
 } from "react-router-dom";
 import { useAuth } from "../Authorization/ProtectedRoute";
@@ -11,8 +11,8 @@ const URL = import.meta.env.VITE_BASE_URL;
 
 const Review = ({ review, reviews, setReviews }) => {
   const user = useAuth();
-  const [username, setUserName] = useState("");
-  const [loading, setLoading] = useState(true);
+  // const [username, setUserName] = useState("");
+  // const [loading, setLoading] = useState(true);
   const { teapot_id } = useParams();
   const navigate = useNavigate();
 
@@ -77,12 +77,7 @@ const Review = ({ review, reviews, setReviews }) => {
               Edit
             </button>
           </Link>
-          <button
-            onClick={() => handleDelete(review.id)}
-            style={{ textDecoration: "none", color: "black" }}
-          >
-            Delete
-          </button>
+          <button onClick={() => handleDelete(review.id)}>Delete</button>
         </div>
       )}
     </div>

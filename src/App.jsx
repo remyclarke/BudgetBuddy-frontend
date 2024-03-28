@@ -11,7 +11,7 @@ import FourOFour from "./Pages/FourOFour";
 import About from "./Pages/About";
 import NewForm from "./Pages/NewForm";
 import NavBar from "./Components/Common/NavBar";
-import EditForm  from "./Pages/EditForm";
+import EditForm from "./Pages/EditForm";
 import LandingPage from "./Pages/LandingPage";
 
 function App() {
