@@ -1,10 +1,10 @@
-import ReviewAddForm from "../Components/Reviews/ReviewAddForm";
+import ReviewAddForm from '../Components/Reviews/ReviewAddForm'
 import "./Form.css";
 
-const NewForm = () => {
+const NewForm = ({ reviews, setReviews }) => {
   return (
     <div>
-      <ReviewAddForm />
+      <ReviewAddForm reviews={reviews} setReviews={setReviews} />
     </div>
   );
 };

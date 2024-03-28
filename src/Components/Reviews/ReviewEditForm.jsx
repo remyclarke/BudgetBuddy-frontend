@@ -6,7 +6,7 @@ import {
   Link,
 } from "react-router-dom";
 
-export const ReviewEditForm = ({ setReviews, reviews, userInfo }) => {
+const ReviewEditForm = ({ setReviews, reviews }) => {
   const { user } = useOutletContext();
   const navigate = useNavigate();
   const URL = import.meta.env.VITE_BASE_URL;
@@ -119,3 +119,5 @@ export const ReviewEditForm = ({ setReviews, reviews, userInfo }) => {
     </div>
   );
 };
+
+export default ReviewEditForm;

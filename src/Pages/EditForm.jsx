@@ -1,10 +1,10 @@
-import { ReviewEditForm } from "../Components/Reviews/ReviewEditForm";
+import  ReviewEditForm from "../Components/Reviews/ReviewEditForm";
 import "./Form.css";
 
-const EditForm = () => {
+const EditForm = ({ reviews, setReviews }) => {
   return (
     <div>
-      <ReviewEditForm />
+      <ReviewEditForm reviews={reviews} setReviews={setReviews}/>
     </div>
   );
 };
