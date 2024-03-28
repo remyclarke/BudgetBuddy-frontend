@@ -5,20 +5,35 @@
 
 # ABOUT US
 
-*Anita Owen*: https://github.com/AnitaOwen
-<img src="https://res.cloudinary.com/dgifdj6nx/image/upload/t_Profile/v1711312831/TeaWhips-slide1_spdyvw.png" alt="Anita!" width="300" height="300">
+<p align="center">
+  <b>Anita Owen:</b> <a href="https://github.com/AnitaOwen">GitHub</a>
+</p>
+<p align="center">
+  <img src="https://res.cloudinary.com/dgifdj6nx/image/upload/t_Profile/v1711312831/TeaWhips-slide1_spdyvw.png" alt="Anita!" width="300" height="300">
+</p>
 
 
-*Brenda Soto*: https://github.com/BSoto85
-<img src="https://res.cloudinary.com/dgifdj6nx/image/upload/t_Profile/v1711388131/TeaWhips-Brenda_ybojtq.png" alt="Brenda!" width="300" height="300">
+<p align="center">
+  <b>Brenda Soto:</b> <a href="https://github.com/BSoto85">GitHub</a>
+</p>
+<p align="center">
+  <img src="https://res.cloudinary.com/dgifdj6nx/image/upload/t_Profile/v1711388131/TeaWhips-Brenda_ybojtq.png" alt="Brenda!" width="300" height="300">
+</p>
 
 
-*Kenneth Cabral*: https://github.com/KenCab123
-<img src="https://res.cloudinary.com/dgifdj6nx/image/upload/t_Profile/v1711480425/TeaWhips-HotRod_k7i3hu.png" alt="Ken!" width="300" height="300">
+<p align="center">
+  <b>Kenneth Cabral:</b> <a href="https://github.com/KenCab123">GitHub</a>
+</p>
+<p align="center">
+  <img src="https://res.cloudinary.com/dgifdj6nx/image/upload/t_Profile/v1711480425/TeaWhips-HotRod_k7i3hu.png" alt="Ken!" width="300" height="300">
+</p>
 
 
-*Marlon Regis*: https://github.com/MarlonPelau
-<img src="https://res.cloudinary.com/dgifdj6nx/image/upload/t_Profile/v1711395991/IMG_77381_wt6lqt.png" alt="Marlon!" width="300" height="300">
+<p align="center">
+  <b>Marlon Regis:</b> <a href="https://github.com/MarlonPelau">GitHub</a>
+</p>
+<p align="center">
+  <img src="https://res.cloudinary.com/dgifdj6nx/image/upload/t_Profile/v1711395991/IMG_77381_wt6lqt.png" alt="Marlon!" width="300" height="300">
 
 
 Welcome to our quirky world of teapots disguised as vehicles! Our "Code 418" team of `Anita, Brenda, Kenneth & Marlon`, created a Full Stack application, `*TeaWhips*` using ReactJS, ExpressJS, PostgresSQL, pg-promise. `TeaWhips` is an e-commerce platform specializing in teapots shaped like vehicles. The app allows users to browse, purchase, review and enjoy a unique collection of whimsical teapot designs. Users can explore various vehicle-inspired teapots and infuse their tea time with a touch of novelty and personality. The app caters to tea/teapot enthusiasts who appreciate creativity and novelty in their tea accessories, offering a curated selection of teapots designed to delight and inspire.
@@ -57,13 +72,11 @@ In addition, the four of us also worked closely together, practicing and using t
 - Contributing
 
 # Features
--First off, our `landing page` has an `About` link  in the `Header/Navbar`, connecting the user to our team that built this app with brief profiles on each of us. Don't forget to see what we all look like..🫖
+-First off, our `landing page` has an `About` link  in the `Header/Navbar` that, if clicked, connects the user to our team that built this app with brief profiles on each of us. Don't forget to see what we all look like 🫖 when you gloss over each of us!
 
--Immediately upon coming onto our `Landing page`, our boiling, vehicular teapot appears driving from right-to-left of the screen, and if you click on this 'TeaWhip' after it makes a sudden stop at the center of the screen, you're navigated towards another page to see all our `TeaWhips` products.
+-Immediately upon coming onto our `Landing page`, wait for it -- our boiling, vehicular teapot navigates from right-to-left of the screen. Click on this 'TeaWhip' after it makes a sudden stop at the center of the screen, then you're taken to a page to see all our bizarre, quirky and cool `TeaWhips` products.
 
--A...
-
--B...
+-We have a `TeaWhip` for the many enthusiasts out there! From tracktors, to racing cars, to classic vintage old school luxuries, there's something for you. Clicking on any that you fancy, you're able to purchase, review and give 1-5 ⭐️-ratings. Afterwards, the user is even given a form with an option to edit or delete reviews on any particular `TeaWhip`.  
 
 ## Installation
 To run the app locally, follow these steps:
@@ -94,27 +107,31 @@ Start the development server: npm start
 
 ### routing
 
-We used (10?) a lot of Routes for the following files below:
+We used (12!) a lot of Routes for the following files below:
 
--Index.html
+-Index
 
--About.jsx
+-About
 
--LandingPage.jsx
+-LandingPage
 
--Form.jsx
+-EditForm
 
--Four0Four.jsx
+-Dashboard
 
--Index.jsx
+-NewForm
 
--Show.jsx
+-ProtectedRoute
 
--Login.jsx
+-Four0Four
 
--ProtectedRoute.jsx
+-NavBar
 
--Register.jsx
+-Show
+
+-Login
+
+-Register
 
 #### Bonus Items
 Stretch Goals:
@@ -156,8 +173,10 @@ Submit a pull request.
 
 ## TWO (2) User Personas:
 
+<img src="https://res.cloudinary.com/dgifdj6nx/image/upload/t_Gradient fade/v1711643822/TeaWhips16-Jenny2_re98hy.avif" alt="Jenny!" width="300" height="300">
 (1) Meet **Jenny**, She adores cars and loves sipping tea while admiring her model car collection. Seeking to add novelty to her tea time, she discovers the "TeaWhips" app. She downloads it, uncovering a new world of vehicle-themed teapots. Excited, she begins exploring, eager to find the perfect addition to her collection!
 
+<img src="https://res.cloudinary.com/dgifdj6nx/image/upload/t_Gradient fade/v1711644549/TeaWhips17-Carl_rzjccz.jpg" alt="Carl!" width="300" height="300">
 (2) Very different to Jenny, is **Carl**. He's an artist with a short attention span, and also spends less time on apps because of his stance on limiting technology, or too much if it, in his life. Our TeaWhips has to have an appeal to lure him to not log off, and hopefully purchase one or two teapots, or at least grab his attention enough, to revisit in the near future to add to his wild art collection.
 
 ## Code 418 Contacts:
