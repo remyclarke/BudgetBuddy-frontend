@@ -97,6 +97,7 @@ export const ReviewEditForm = ({ setReviews, reviews, userInfo }) => {
           onChange={handleTextChange}
           required
         />
+      
         <label htmlFor="rating">Rating:</label>
         <input
           className="rating-input"
