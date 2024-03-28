@@ -17,6 +17,7 @@ const Home = () => {
       })
       .catch((error) => console.error("Error fetching CSRF token:", error));
   }, []);
+  
 
   return (
     <div className="home-div">

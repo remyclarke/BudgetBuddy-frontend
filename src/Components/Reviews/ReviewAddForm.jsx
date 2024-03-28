@@ -24,6 +24,13 @@ const ReviewAddForm = ({ reviews, setReviews }) => {
     created_at: `${year}-${month}-${day}`,
   });
 
+  const handleTextChange = (event) => {
+    setNewReview({
+      ...newReview,
+      [event.target.id]: event.target.value,
+    })
+  }
+
   const handleSubmit = (event) => {
     event.preventDefault()
   
@@ -48,7 +55,7 @@ const ReviewAddForm = ({ reviews, setReviews }) => {
       alert(`Invalid Inputs`)
       navigate(`/teapots/${teapot_id}`)
     }
-
+  }
   return (
     <div>
       {/* {children} */}
@@ -84,7 +91,6 @@ const ReviewAddForm = ({ reviews, setReviews }) => {
       </form>
     </div>
   );
-  }
 };
 
 

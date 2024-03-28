@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 const URL = import.meta.env.VITE_BASE_URL;
 
 // console.log(`URL`, URL)
-const Login = ({setToggleLogin, toggleLogin, setIsAuthenticated}) => {
+const Login = ({setToggleLogin}) => {
   const [user, setUser] = useState({ username: "", password: "" });
   const navigate = useNavigate();
 
@@ -37,7 +37,7 @@ const Login = ({setToggleLogin, toggleLogin, setIsAuthenticated}) => {
         setUser({ username: "", password: "" });
         throw new Error("Registration failed");
       }
-
+      await setToggleLogin(true)
       navigate("/teapots");
     } catch (error) {
       console.error("Error during registration:", error);
@@ -51,7 +51,6 @@ const Login = ({setToggleLogin, toggleLogin, setIsAuthenticated}) => {
       alert("You must enter a username and password");
       return;
     }
-    setToggleLogin(true)
     postFetch(user);
   }
 
@@ -59,11 +58,8 @@ const Login = ({setToggleLogin, toggleLogin, setIsAuthenticated}) => {
   async function handleDemoSignIn(e) {
     e.preventDefault();
     const user = { username: "demo", password: "password" };
-    setToggleLogin(!toggleLogin)
     postFetch(user);
   }
-
-  // BUILD OUT YOUR FORM PROPERLY WITH LABELS AND WHATEVER CSS FRAMEWORK YOU MAY USE OR VANILLA CSS. THIS IS JUST A BOILERPLATE
 
   return (
     <div>
