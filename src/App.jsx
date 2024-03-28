@@ -18,16 +18,17 @@ import { ReviewEditForm } from "./Components/Reviews/ReviewEditForm";
 
 function App() {
   const [reviews, setReviews] = useState([]);
-
+  const [toggleLogin, setToggleLogin] = useState(false)
+  
 
   return (
     <>
-      <NavBar />
+      <NavBar toggleLogin={toggleLogin} setToggleLogin={setToggleLogin}/>
       <Routes>
         <Route
           path="/"
           element={
-            <LandingPage />
+            <LandingPage setToggleLogin={setToggleLogin} toggleLogin={toggleLogin}/>
             // <div>
             //   <h1>Welcome to the Auth Starter</h1>
             //   <Link to="/login">Login</Link>
@@ -36,7 +37,7 @@ function App() {
             // </div>
           }
         />
-        <Route path="/login" element={<Login/>} />
+        <Route path="/login" element={<Login setToggleLogin={setToggleLogin} toggleLogin={toggleLogin} />} />
         <Route path="/register" element={<Register />} />
         {/* Names of routes? */}
         <Route path="/teapots" element={<Index />} />

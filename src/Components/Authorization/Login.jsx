@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 const URL = import.meta.env.VITE_BASE_URL;
 
 // console.log(`URL`, URL)
-const Login = () => {
+const Login = ({setToggleLogin, toggleLogin, setIsAuthenticated}) => {
   const [user, setUser] = useState({ username: "", password: "" });
   const navigate = useNavigate();
 
@@ -51,7 +51,7 @@ const Login = () => {
       alert("You must enter a username and password");
       return;
     }
-
+    setToggleLogin(true)
     postFetch(user);
   }
 
@@ -59,6 +59,7 @@ const Login = () => {
   async function handleDemoSignIn(e) {
     e.preventDefault();
     const user = { username: "demo", password: "password" };
+    setToggleLogin(!toggleLogin)
     postFetch(user);
   }
 
