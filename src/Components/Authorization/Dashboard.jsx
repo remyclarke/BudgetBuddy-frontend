@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
-import { useOutletContext, useNavigate } from 'react-router-dom'
+import { useOutletContext, useNavigate, Link } from 'react-router-dom'
+import "./Dashboard.css"
 
 const Dashboard = () => {
   const { user } = useOutletContext() // Access user data provided by the Outlet's context
@@ -8,11 +9,12 @@ const Dashboard = () => {
   
   
   return (
-    <div>
-      <h1>Welcome, {user && user.username.toUpperCase()}</h1>
-      <h3>You have now logged out</h3>
-      {/* <h3>This is a protected Component called Dashboard</h3> */}
-      {/* Use user data as needed, for example: */}
+    <div className='register-container'>
+      <h2>Welcome, {user && user.username.toUpperCase()}</h2>
+      <Link to={'/teapots'}>
+        <h3>Click to view our TeaWhips</h3>
+      </Link>
+      <img src={"https://res.cloudinary.com/dgifdj6nx/image/upload/v1711725914/TeaWhips12_vqn0s4.gif"} alt="teapot-gif" />
     </div>
   )
 }

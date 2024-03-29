@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useNavigate } from "react-router-dom";
 import ReviewsIndex from "../Reviews/ReviewsIndex";
 import "./Teapots.css";
 
@@ -9,6 +9,7 @@ const TeapotDetails = ({ reviews, setReviews }) => {
   const [teapot, setTeapot] = useState();
 
   const { teapot_id } = useParams();
+  const navigate = useNavigate()
 
   useEffect(() => {
     fetch(`${URL}/api/teapots/${teapot_id}`)
@@ -17,6 +18,7 @@ const TeapotDetails = ({ reviews, setReviews }) => {
   }, [teapot_id]);
 
   return (
+
     <div>
       {teapot && (
         <div className="show-container">
@@ -25,27 +27,19 @@ const TeapotDetails = ({ reviews, setReviews }) => {
           </section>
           <section className="info-section">
             <h3>{teapot.name}</h3>
+            <p>Price: ${teapot.price}.00</p>
+            <p>Description: {teapot.description}</p>
+            <p>{teapot.material && `Material: ${teapot.material}`}</p>
+            {teapot.capacity && 
             <p>
-              <span>Price:</span> ${teapot.price}.00
+            Capacity: {teapot.capacity} cup
+            {teapot.capacity === 1 ? "" : "s"}
             </p>
-            <p>
-              <span>Description:</span> {teapot.description}
-            </p>
-            <p>
-              <span>Material:</span> {teapot.material}
-            </p>
-            <p>
-              <span>Capacity:</span> {teapot.capacity} cup
-              {teapot.capacity === 1 ? "" : "s"}
-            </p>
-            <article>
-              <Link to={`/teapots/${teapot_id}/new`}>
-                <button>Add Review</button>
-              </Link>
-              <Link to={"/teapots"} style={{ textAlign: "end" }}>
-                <button>Back</button>
-              </Link>
-            </article>
+            }
+          <article className="btns">
+          <button onClick={() => navigate(`/teapots/${teapot_id}/new`)}>Add Review</button>
+          <button onClick={() => navigate(`/teapots`)}>Back</button>
+          </article>
           </section>
         </div>
       )}

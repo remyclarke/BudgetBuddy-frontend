@@ -110,11 +110,14 @@ span {
   font-weight: 600;
 }
 
-article {
+.btns {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  place-items: center;
   margin-top: 15px;
 }
+
 
 @media (max-width: 780px) {
   .teapot-container {

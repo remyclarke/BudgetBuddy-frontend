@@ -17,8 +17,10 @@ button {
   border-radius: 7px;
 }
 
+
 button:hover {
   background-color: maroon;
+  cursor: pointer;
   color: white;
 }
 
