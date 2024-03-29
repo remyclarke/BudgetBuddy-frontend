@@ -118,18 +118,23 @@ We used A LOT (12!) of Routes for the following files below:
 
 -Register
 
-#### Bonus Items
-Stretch Goals:
+## Bonus Items
+Stretch Goals!
+<img src="https://res.cloudinary.com/dgifdj6nx/image/upload/t_Gradient fade/v1711733937/TeaWhips-stretchgoals_li8znd.jpg" alt="TeaWhips!" width="300" height="300">
 
--Opted-in to use the User Login to our `TeaWhips` application, using the already prepared User Auth login front and backend starters.
+1. Opted-in to use the User Login to our `TeaWhips` application, using the already prepared User Auth login front and backend starters.
 
--Most, if not all our images, are stored and uploaded in our `Cloudinary` account. 
+2. Most, if not all our images, are stored and uploaded in our `Cloudinary` account. 
 
--Created a `Search Bar` to enable users to search for the various product options available in our `TeaWhips` app.
+3. Created a `Search Bar` to enable users to search data for the various product options available in our `TeaWhips` app.
 
--`CSS Animations` for our `Landing Page` is used on our moving, vehicular `TeaWhips` logo.
+4. `CSS Animations` for our `Landing Page` is used on our moving, vehicular `TeaWhips` logo.
 
--There's also a designed `CSS 404 Page` included in our app.
+5. We also have `Error Components` in our code.
+
+6. There's also a designed `CSS 404 Page` included in our app.
+
+7. `Sorting some data` is yet another stretch goal we've accomplished.
 
 #### Contributing
 Contributions: 
