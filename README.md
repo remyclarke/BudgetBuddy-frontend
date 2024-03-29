@@ -3,38 +3,6 @@
 
 <img src="https://res.cloudinary.com/dgifdj6nx/image/upload/t_Gradient fade/v1711048891/TeaWhips3_c6mmec.avif" alt="TeaWhips!" width="300" height="300">
 
-# ABOUT US
-
-<p align="center">
-  <b>Anita Owen:</b> <a href="https://github.com/AnitaOwen">GitHub</a>
-</p>
-<p align="center">
-  <img src="https://res.cloudinary.com/dgifdj6nx/image/upload/t_Profile/v1711312831/TeaWhips-slide1_spdyvw.png" alt="Anita!" width="300" height="300">
-</p>
-
-
-<p align="center">
-  <b>Brenda Soto:</b> <a href="https://github.com/BSoto85">GitHub</a>
-</p>
-<p align="center">
-  <img src="https://res.cloudinary.com/dgifdj6nx/image/upload/t_Profile/v1711730824/TeaWhips-BrendaAbout_vnayip.png" alt="Brenda!" width="300" height="300">
-</p>
-
-
-<p align="center">
-  <b>Kenneth Cabral:</b> <a href="https://github.com/KenCab123">GitHub</a>
-</p>
-<p align="center">
-  <img src="https://res.cloudinary.com/dgifdj6nx/image/upload/t_Profile/v1711049426/TeaWhip5_ywp9fs.png" alt="Ken!" width="300" height="300">
-</p>
-
-
-<p align="center">
-  <b>Marlon Regis:</b> <a href="https://github.com/MarlonPelau">GitHub</a>
-</p>
-<p align="center">
-  <img src="https://res.cloudinary.com/dgifdj6nx/image/upload/t_Profile/v1711051183/TeaWhip10_zettiw.png" alt="Marlon!" width="300" height="300">
-
 
 Welcome to our quirky world of teapots disguised as vehicles! Our "Code 418" team of `Anita, Brenda, Kenneth & Marlon`, created a Full Stack application, `*TeaWhips*` using ReactJS, ExpressJS, PostgresSQL, pg-promise. `TeaWhips` is our unique platform specializing in teapots shaped like vehicles. A fun fact: none of us even had a clue that this sort of thing exists. The idea was an organic one -- Kenneth has a love for cars, and was drumming-up an app idea based around an e-commerce site for that, but randomly Anita for some wild reason, interjected with an idea about teapots? You can't make this stuff up! So, all at once, we decided to Google search a combination between cars and teapots, and lo' and behold, there was such a thing as car-teapots, and thriving, vibrant all over Etsy! So there you have it, our app idea was born.
 
@@ -66,13 +34,13 @@ In addition, the four of us also worked closely together, practicing and using t
 - ChatGPT
 - AI
 
-# TABLE OF CONTENTS  
+## TABLE OF CONTENTS  
 - Features
 - Installation
 - Bonus Items
 - Contributing
 
-# Features
+### Features
 -First off, our `landing page` has an `About` link  in the `Header/Navbar` that, if clicked, connects the user to our team that built this app with brief profiles on each of us. Don't forget to see what we all look like 🫖 when you gloss over each of us!
 
 -Immediately upon coming onto our `Landing page`, wait for it -- our boiling, vehicular teapot navigates from right-to-left of the screen. Click on this 'TeaWhip' after it makes a sudden stop at the center of the screen, then you're taken to a page to see all our bizarre, quirky and cool `TeaWhips` products.
@@ -90,7 +58,7 @@ To run the app locally, follow these steps:
 
 4. ```npm run dev```
 
-**Access the Dashboard**: Open your web browser and go to http://localhost:3000/ to access our `TeaWhips` app.
+**Access the Dashboard**: Open your web browser and go to https://main--teawhips.netlify.app/ to access our `TeaWhips` app.
 
 
 ## ROUTES
@@ -122,7 +90,8 @@ We used A LOT (12!) of Routes for the following files below:
 
 ## Bonus Items
 Stretch Goals!
-<img src="https://res.cloudinary.com/dgifdj6nx/image/upload/t_Gradient fade/v1711733937/TeaWhips-stretchgoals_li8znd.jpg" alt="TeaWhips!" width="300" height="300">
+
+<img src="https://res.cloudinary.com/dgifdj6nx/image/upload/t_Banner 16:9/v1711743452/TeaWhips-stretchgoals3_xfgzff.png" alt="stretch goals!" width="300" height="300">
 
 1. Opted-in to use the User Login to our `TeaWhips` application, using the already prepared User Auth login front and backend starters.
 
@@ -138,7 +107,7 @@ Stretch Goals!
 
 7. `Sorting some data` is yet another stretch goal we've accomplished.
 
-#### Contributing
+### Contributing
 Contributions: 
 You are welcome to contribute to our 'TeaWhips Project', follow these simple steps below:
 
@@ -151,7 +120,7 @@ You are welcome to contribute to our 'TeaWhips Project', follow these simple ste
 
 4. Submit a pull request.
 
-# 5 USER STORIES
+## USER STORIES
 
 1. As a user, a user name and password is required to log-in to access our diverse range of TeaWhip products!
 
@@ -163,16 +132,53 @@ You are welcome to contribute to our 'TeaWhips Project', follow these simple ste
 
 5. As a user, there must be options to post, rate, edit and delete reviews on the TeaWhips.
 
-## TWO (2) User Personas:
+## User Personas:
 
 <img src="https://res.cloudinary.com/dgifdj6nx/image/upload/t_Gradient fade/v1711643822/TeaWhips16-Jenny2_re98hy.avif" alt="Jenny!" width="300" height="300">
+
+
 1. Meet **Jenny**, She adores cars and loves sipping tea while admiring her model car collection. Seeking to add novelty to her tea time, she discovers the "TeaWhips" app. She downloads it, uncovering a new world of vehicle-themed teapots. Excited, she begins exploring, eager to find the perfect addition to her collection!
 
 
 <img src="https://res.cloudinary.com/dgifdj6nx/image/upload/t_Gradient fade/v1711644549/TeaWhips17-Carl_rzjccz.jpg" alt="Carl!" width="300" height="300">
+
+
 2. Very different to Jenny, is **Carl**. He's an artist with a short attention span, and also spends less time on apps because of his stance on limiting technology, or too much if it, in his life. Our TeaWhips has to have an appeal to lure him to not log off, and hopefully purchase one or two teapots, or at least grab his attention enough, to revisit in the near future to add to his wild art collection.
 
-## Code 418 Contacts:
+
+## ABOUT US
+
+<p align="center">
+  <b>Anita Owen:</b> <a href="https://github.com/AnitaOwen">GitHub</a>
+</p>
+<p align="center">
+  <img src="https://res.cloudinary.com/dgifdj6nx/image/upload/t_Profile/v1711312831/TeaWhips-slide1_spdyvw.png" alt="Anita!" width="300" height="300">
+</p>
+
+
+<p align="center">
+  <b>Brenda Soto:</b> <a href="https://github.com/BSoto85">GitHub</a>
+</p>
+<p align="center">
+  <img src="https://res.cloudinary.com/dgifdj6nx/image/upload/t_Profile/v1711730824/TeaWhips-BrendaAbout_vnayip.png" alt="Brenda!" width="300" height="300">
+</p>
+
+
+<p align="center">
+  <b>Kenneth Cabral:</b> <a href="https://github.com/KenCab123">GitHub</a>
+</p>
+<p align="center">
+  <img src="https://res.cloudinary.com/dgifdj6nx/image/upload/t_Profile/v1711049426/TeaWhip5_ywp9fs.png" alt="Ken!" width="300" height="300">
+</p>
+
+
+<p align="center">
+  <b>Marlon Regis:</b> <a href="https://github.com/MarlonPelau">GitHub</a>
+</p>
+<p align="center">
+  <img src="https://res.cloudinary.com/dgifdj6nx/image/upload/t_Profile/v1711051183/TeaWhip10_zettiw.png" alt="Marlon!" width="300" height="300">
+
+### Code 418 Contacts:
 *Marlon Regis* - marlonregis@pursuit.org
 
 *Kenneth Cabral* - kennethcabral@pursuit.org
@@ -181,10 +187,11 @@ You are welcome to contribute to our 'TeaWhips Project', follow these simple ste
 
 *Anita Owen* - anitaown@pursuit.org
 
-As a group, the four of us were engaged daily, working on multiple tasks guided by our Trello board `To-Do, Doing, Done` detailed lists throughout each day, sometimes even weekends via Slack/Zoom. Here's our `Team Norms` link: https://docs.google.com/document/d/1FETAEXKfVJviGIdRROPBv5K7-wRZFbXqEYB6R62w6Z0/edit
+As a group, the four of us were engaged daily, working on multiple tasks guided by our Trello board `To-Do, Doing, Done` detailed lists throughout each day, sometimes even weekends via Slack/Zoom. Here's our `Team Norms` <button><a href="https://docs.google.com/document/d/1FETAEXKfVJviGIdRROPBv5K7-wRZFbXqEYB6R62w6Z0/edit">LINK!</a></button>
 
 
-#### Visual Examples
+
+### Visual Examples
 The following are examples of our app being built at different stages, while tackling this `TeaWhips` project. Here are just a few images showing our process.
 WIREFRAMES (desktop and mobile)
 
@@ -215,11 +222,11 @@ ERDs (tables)
 
 ## DEPLOYMENT & SLIDE LINKS
 
-**Frontend deployment - our netlify.com link**:
+**Frontend deployment - our netlify.com link**: https://main--teawhips.netlify.app/
 
 (https://github.com/AnitaOwen/auth-react-login-project-frontend)
 
-**Backend deployment - our render.com link**:
+**Backend deployment - our render.com link**: https://teawhips-backend.onrender.com
 
 (https://github.com/AnitaOwen/auth-express-login-project-backend)
 
