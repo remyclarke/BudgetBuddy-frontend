@@ -17,7 +17,7 @@
   <b>Brenda Soto:</b> <a href="https://github.com/BSoto85">GitHub</a>
 </p>
 <p align="center">
-  <img src="https://res.cloudinary.com/dgifdj6nx/image/upload/t_Profile/v1711480709/TeaWhips-VPKensington_ph7mqk.png" alt="Brenda!" width="300" height="300">
+  <img src="https://res.cloudinary.com/dgifdj6nx/image/upload/t_Profile/v1711730824/TeaWhips-BrendaAbout_vnayip.png" alt="Brenda!" width="300" height="300">
 </p>
 
 
@@ -36,7 +36,9 @@
   <img src="https://res.cloudinary.com/dgifdj6nx/image/upload/t_Profile/v1711051183/TeaWhip10_zettiw.png" alt="Marlon!" width="300" height="300">
 
 
-Welcome to our quirky world of teapots disguised as vehicles! Our "Code 418" team of `Anita, Brenda, Kenneth & Marlon`, created a Full Stack application, `*TeaWhips*` using ReactJS, ExpressJS, PostgresSQL, pg-promise. `TeaWhips` is an e-commerce platform specializing in teapots shaped like vehicles. The app allows users to browse, purchase, review and enjoy a unique collection of whimsical teapot designs. Users can explore various vehicle-inspired teapots and infuse their tea time with a touch of novelty and personality. The app caters to tea/teapot enthusiasts who appreciate creativity and novelty in their tea accessories, offering a curated selection of teapots designed to delight and inspire.
+Welcome to our quirky world of teapots disguised as vehicles! Our "Code 418" team of `Anita, Brenda, Kenneth & Marlon`, created a Full Stack application, `*TeaWhips*` using ReactJS, ExpressJS, PostgresSQL, pg-promise. `TeaWhips` is our unique platform specializing in teapots shaped like vehicles. A fun fact: none of us even had a clue that this sort of thing exists. The idea was an organic one -- Kenneth has a love for cars, and was drumming-up an app idea based around an e-commerce site for that, but randomly Anita for some wild reason, interjected with an idea about teapots? You can't make this stuff up! So, all at once, we decided to Google search a combination between cars and teapots, and lo' and behold, there was such a thing as car-teapots, and thriving, vibrant all over Etsy! So there you have it, our app idea was born.
+
+The app allows users to register, browse, review and click around to enjoy a unique collection of whimsical teapot designs. Users can explore various vehicle-inspired teapots and infuse their tea time with a touch of novelty and personality. The app caters to tea/teapot enthusiasts who appreciate creativity and novelty in their tea accessories, offering a curated selection of teapots designed to delight and inspire.
 
 In addition, the four of us also worked closely together, practicing and using the following below **Project Tools & Skills**:
 - React Hooks
@@ -160,6 +162,7 @@ You are welcome to contribute to our 'TeaWhips Project', follow these simple ste
 
 <img src="https://res.cloudinary.com/dgifdj6nx/image/upload/t_Gradient fade/v1711643822/TeaWhips16-Jenny2_re98hy.avif" alt="Jenny!" width="300" height="300">
 1. Meet **Jenny**, She adores cars and loves sipping tea while admiring her model car collection. Seeking to add novelty to her tea time, she discovers the "TeaWhips" app. She downloads it, uncovering a new world of vehicle-themed teapots. Excited, she begins exploring, eager to find the perfect addition to her collection!
+
 
 <img src="https://res.cloudinary.com/dgifdj6nx/image/upload/t_Gradient fade/v1711644549/TeaWhips17-Carl_rzjccz.jpg" alt="Carl!" width="300" height="300">
 2. Very different to Jenny, is **Carl**. He's an artist with a short attention span, and also spends less time on apps because of his stance on limiting technology, or too much if it, in his life. Our TeaWhips has to have an appeal to lure him to not log off, and hopefully purchase one or two teapots, or at least grab his attention enough, to revisit in the near future to add to his wild art collection.
