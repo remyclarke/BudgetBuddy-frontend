@@ -1,5 +1,5 @@
 import { Routes, Route } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import ProtectedRoute from "./Components/Authorization/ProtectedRoute";
 import Register from "./Components/Authorization/Register";
@@ -16,14 +16,30 @@ import LandingPage from "./Pages/LandingPage";
 
 function App() {
   const [reviews, setReviews] = useState([]);
-  const [toggleLogin, setToggleLogin] = useState(false)
+  const [toggleLogin, setToggleLogin] = useState(false);
+
+  useEffect(() => {
+    // Fetch call to the root route of your backend to get the CSRF token
+    fetch(`${URL}`, {
+      credentials: "include", // Important: Include cookies in the request
+    })
+      .then((response) => {
+        if (response.ok) {
+          console.log("XSRF-Token cookie should now be set.");
+        }
+      })
+      .catch((error) => console.error("Error fetching CSRF token:", error));
+  }, []);
 
   return (
     <>
-      <NavBar toggleLogin={toggleLogin} setToggleLogin={setToggleLogin}/>
+      <NavBar toggleLogin={toggleLogin} setToggleLogin={setToggleLogin} />
       <Routes>
         <Route path="/" element={<LandingPage />} />
-        <Route path="/login" element={<Login setToggleLogin={setToggleLogin} />} />
+        <Route
+          path="/login"
+          element={<Login setToggleLogin={setToggleLogin} />}
+        />
         <Route path="/register" element={<Register />} />
         {/* Names of routes? */}
         <Route path="/teapots" element={<Index />} />
@@ -37,8 +53,14 @@ function App() {
         <Route element={<ProtectedRoute />}>
           {/* Place protected routes here */}
           <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/teapots/:teapot_id/new" element={<NewForm reviews={reviews} setReviews={setReviews} />}/>
-          <Route path="/teapots/:teapot_id/edit/:review_id" element={<EditForm reviews={reviews} setReviews={setReviews} />}/>
+          <Route
+            path="/teapots/:teapot_id/new"
+            element={<NewForm reviews={reviews} setReviews={setReviews} />}
+          />
+          <Route
+            path="/teapots/:teapot_id/edit/:review_id"
+            element={<EditForm reviews={reviews} setReviews={setReviews} />}
+          />
         </Route>
       </Routes>
     </>
