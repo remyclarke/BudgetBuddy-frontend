@@ -32,17 +32,14 @@ const ReviewEditForm = ({ setReviews, reviews }) => {
   updatedReview.updated_at = `${year}-${month}-${day}`;
 
   const handleEdit = (updatedReview) => {
-    const csrfToken = document.cookie
-      .split("; ")
-      .find((row) => row.startsWith("XSRF-TOKEN="))
-      .split("=")[1];
+    const token = localStorage.getItem("token");
     fetch(`${URL}/api/teapots/${teapot_id}/reviews/${review_id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
-        "CSRF-Token": csrfToken,
+        Authorization: `Bearer ${token}`,
       },
-      credentials: "include",
+
       body: JSON.stringify(updatedReview),
     })
       .then((response) => response.json())
@@ -52,10 +49,9 @@ const ReviewEditForm = ({ setReviews, reviews }) => {
           return review.id === review_id;
         });
         copyReviewArray[indexUpdatedReview] = responseJSON;
-        console.log(copyReviewArray.reverse())
+        console.log(copyReviewArray.reverse());
         setReviews(copyReviewArray);
         // setReviews(copyReviewArray.reverse());
-
 
         setUpdatedReview({
           content: "",

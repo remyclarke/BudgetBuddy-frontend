@@ -33,19 +33,16 @@ const ReviewAddForm = ({ reviews, setReviews }) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    const token = localStorage.getItem("token");
 
-    const csrfToken = document.cookie
-      .split("; ")
-      .find((row) => row.startsWith("XSRF-TOKEN="))
-      .split("=")[1];
     if (newReview.content.length > 0 && newReview.rating.length > 0) {
       fetch(`${URL}/api/teapots/${teapot_id}/reviews`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "CSRF-Token": csrfToken,
+          Authorization: `Bearer ${token}`,
         },
-        credentials: "include",
+
         body: JSON.stringify(newReview),
       })
         .then((res) => res.json())
