@@ -29,7 +29,7 @@ const Register = () => {
       if (!res.ok) throw new Error("Registration failed");
       const data = await res.json();
       console.log("data", data);
-      if (data.token) localStorage.setItem("token", data.token);
+      if (data.token) localStorage.setItem("token", data.newUser.token);
 
       navigate("/dashboard"); // Navigate to /dashboard on success
     } catch (error) {
