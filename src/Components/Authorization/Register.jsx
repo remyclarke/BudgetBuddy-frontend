@@ -19,16 +19,16 @@ const Register = () => {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        // "CSRF-Token": csrfToken, // Include CSRF token in request headers
       },
-      // credentials: "include", // Important: Include cookies in the request
+
       body: JSON.stringify(user),
     };
 
     try {
       const res = await fetch(`${URL}/api/auth/register`, options);
       if (!res.ok) throw new Error("Registration failed");
-
+      const data = await res.json();
+      localStorage.setItem("token", data.token);
       navigate("/dashboard"); // Navigate to /dashboard on success
     } catch (error) {
       console.error("Error during registration:", error);

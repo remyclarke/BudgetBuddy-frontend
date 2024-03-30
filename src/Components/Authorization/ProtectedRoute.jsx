@@ -12,7 +12,7 @@ export const useAuth = () => {
   useEffect(() => {
     const checkAuth = async () => {
       setIsLoading(true);
-      const token = localStorage.getItem("token"); // Retrieve the token inside the effect
+      const token = localStorage.getItem("token");
       try {
         const response = await fetch(`${URL}/api/auth/check-auth`, {
           headers: {
