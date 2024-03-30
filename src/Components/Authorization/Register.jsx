@@ -14,17 +14,14 @@ const Register = () => {
 
   async function handleSubmit(e) {
     e.preventDefault();
-    const csrfToken = document.cookie
-      .split("; ")
-      .find((row) => row.startsWith("XSRF-TOKEN="))
-      .split("=")[1]; // Extract CSRF token from cookies
+
     const options = {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "CSRF-Token": csrfToken, // Include CSRF token in request headers
+        // "CSRF-Token": csrfToken, // Include CSRF token in request headers
       },
-      credentials: "include", // Important: Include cookies in the request
+      // credentials: "include", // Important: Include cookies in the request
       body: JSON.stringify(user),
     };
 

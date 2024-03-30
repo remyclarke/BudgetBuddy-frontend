@@ -14,18 +14,12 @@ const Login = ({ setToggleLogin }) => {
   // This function is being used in two places. It can be extracted to a helpers.js file
 
   async function postFetch(user) {
-    console.log(`cookie: `, document.cookie);
-    const csrfToken = document.cookie
-      .split("; ")
-      .find((row) => row.startsWith("XSRF-TOKEN="))
-      .split("=")[1]; // Extract CSRF token from cookies
     const options = {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "CSRF-Token": csrfToken, // Include CSRF token in request headers
       },
-      credentials: "include", // Important: Include cookies in the request
+
       body: JSON.stringify(user),
     };
 
@@ -38,8 +32,13 @@ const Login = ({ setToggleLogin }) => {
         setUser({ username: "", password: "" });
         throw new Error("Registration failed");
       }
-      await setToggleLogin(true);
-      navigate("/teapots");
+      if (data.token) {
+        localStorage.setItem("token", res.token);
+        await setToggleLogin(true);
+        navigate("/teapots");
+      } else {
+        console.log("JWT Login Faile");
+      }
     } catch (error) {
       console.error("Error during registration:", error);
     }

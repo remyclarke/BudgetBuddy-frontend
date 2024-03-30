@@ -1,6 +1,7 @@
 // src/components/ProtectedRoute.jsx
 import { useState, useEffect } from "react";
 import { Navigate, Outlet } from "react-router-dom";
+
 const URL = import.meta.env.VITE_BASE_URL;
 
 export const useAuth = () => {
@@ -11,9 +12,12 @@ export const useAuth = () => {
   useEffect(() => {
     const checkAuth = async () => {
       setIsLoading(true);
+      const token = localStorage.getItem("token"); // Retrieve the token inside the effect
       try {
         const response = await fetch(`${URL}/api/auth/check-auth`, {
-          credentials: "include", // Important: Include cookies in the request
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
         });
         if (response.ok) {
           const data = await response.json();

@@ -14,6 +14,7 @@ const NavBar = ({ toggleLogin, setToggleLogin }) => {
       method: "GET", // or 'POST', depending on your backend
       credentials: "include",
     });
+    localStorage.removeItem("token");
     if (response.ok) {
       setToggleLogin(false);
       navigate("/login");
