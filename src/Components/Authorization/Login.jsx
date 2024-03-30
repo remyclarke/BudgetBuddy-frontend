@@ -1,5 +1,5 @@
 import { useNavigate, Link } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import "./Login.css";
 const URL = import.meta.env.VITE_BASE_URL;
 

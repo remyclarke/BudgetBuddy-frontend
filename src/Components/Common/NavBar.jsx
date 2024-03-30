@@ -10,10 +10,7 @@ const NavBar = ({ toggleLogin, setToggleLogin }) => {
   //   console.log(user)
 
   async function handleLogout() {
-    const response = await fetch("http://localhost:3003/api/auth/logout", {
-      method: "GET", // or 'POST', depending on your backend
-      credentials: "include",
-    });
+    const response = await fetch("http://localhost:3003/api/auth/logout");
     localStorage.removeItem("token");
     if (response.ok) {
       setToggleLogin(false);
