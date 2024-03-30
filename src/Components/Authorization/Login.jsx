@@ -33,11 +33,11 @@ const Login = ({ setToggleLogin }) => {
         throw new Error("Registration failed");
       }
       if (data.token) {
-        localStorage.setItem("token", res.token);
+        localStorage.setItem("token", data.token);
         await setToggleLogin(true);
         navigate("/teapots");
       } else {
-        console.log("JWT Login Faile");
+        console.log("JWT Login Failed");
       }
     } catch (error) {
       console.error("Error during registration:", error);
