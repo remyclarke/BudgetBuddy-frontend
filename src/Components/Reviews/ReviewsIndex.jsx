@@ -28,7 +28,7 @@ const ReviewsIndex = ({ teapot_id, reviews, setReviews }) => {
     fetch(`${URL}/api/teapots/${teapot_id}/reviews`, {
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`, // Include the JWT in the Authorization header
+        Authorization: `Bearer ${token}`,
       },
     })
       .then((res) => res.json())

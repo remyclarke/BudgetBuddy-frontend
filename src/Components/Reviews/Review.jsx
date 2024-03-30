@@ -27,18 +27,14 @@ const Review = ({ review, reviews, setReviews }) => {
   };
 
   const handleDelete = (id) => {
-    const csrfToken = document.cookie
-      .split("; ")
-      .find((row) => row.startsWith("XSRF-TOKEN="))
-      .split("=")[1];
-
+    const token = localStorage.getItem("token");
     if (confirm(`Are you sure you want to delete your review?`)) {
       fetch(`${URL}/api/teapots/${teapot_id}/reviews/${id}`, {
         method: "DELETE",
         headers: {
-          "CSRF-Token": csrfToken,
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
         },
-        credentials: "include",
       })
         .then((response) => response.json())
         .then((responseJSON) => {

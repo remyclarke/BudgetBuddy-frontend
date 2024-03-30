@@ -70,12 +70,10 @@ const ReviewEditForm = ({ setReviews, reviews }) => {
   };
 
   useEffect(() => {
-    const csrfToken = document.cookie
-      .split("; ")
-      .find((row) => row.startsWith("XSRF-TOKEN="))
-      .split("=")[1];
+    const token = localStorage.getItem("token");
     fetch(`${URL}/api/teapots/${teapot_id}/reviews/${review_id}`, {
-      credentials: "include",
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
     })
       .then((res) => res.json())
       .then((data) => setUpdatedReview(data.review))
