@@ -44,6 +44,9 @@ const NavBar = ({ toggleLogin, setToggleLogin }) => {
         <h1>TeaWhips</h1>
       </Link>
       <article>
+        {user && (
+          <span style={{ color: "white" }}>Welcome, {user.username}</span>
+        )}
         <Link to={"/about"}>
           <p className="p1">About</p>
         </Link>
@@ -56,7 +59,6 @@ const NavBar = ({ toggleLogin, setToggleLogin }) => {
           </Link>
         ) : (
           <>
-            {user && <span>Welcome, {user.username}</span>}
             <Link
               onClick={handleLogout}
               style={{ textDecoration: "none", color: "black" }}
