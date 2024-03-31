@@ -4,7 +4,7 @@ import "../Authorization/Login.css";
 
 const URL = import.meta.env.VITE_BASE_URL;
 
-const Register = () => {
+const Register = ({ setToggleLogin }) => {
   const navigate = useNavigate();
   const [user, setUser] = useState({ username: "", password: "", email: "" });
 
@@ -32,7 +32,7 @@ const Register = () => {
       if (data.newUser.token) {
         localStorage.removeItem("token");
         localStorage.setItem("token", data.newUser.token);
-
+        setToggleLogin(true);
         navigate("/dashboard");
       }
     } catch (error) {

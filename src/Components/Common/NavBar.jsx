@@ -1,3 +1,5 @@
+import { useEffect, useState } from "react";
+
 import { Link, useNavigate } from "react-router-dom";
 import "./NavBar.css";
 
@@ -5,6 +7,24 @@ const URL = import.meta.env.VITE_BASE_URL;
 
 const NavBar = ({ toggleLogin, setToggleLogin }) => {
   const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!toggleLogin) setUser(null);
+
+    if (toggleLogin) {
+      const token = localStorage.getItem("token");
+      if (token) {
+        fetch(`${URL}/api/user`, {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        })
+          .then((response) => response.json())
+          .then((data) => setUser(data.user))
+          .catch((error) => console.error("Error fetching user:", error));
+      }
+    }
+  }, [toggleLogin]);
 
   async function handleLogout() {
     localStorage.removeItem("token");
@@ -14,17 +34,13 @@ const NavBar = ({ toggleLogin, setToggleLogin }) => {
     navigate("/login");
   }
 
-  const handleClick = () => {
-    if (login) handleLogout();
-    else setLogin(true);
-  };
-
   return (
     <div className="navbar-container">
       <Link to={"/teapots"}>
         <h1>TeaWhips</h1>
       </Link>
       <article>
+        <span>Hi, </span>
         <Link to={"/about"}>
           <p className="p1">About</p>
         </Link>
