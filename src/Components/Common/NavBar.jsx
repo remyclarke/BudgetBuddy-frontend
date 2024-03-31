@@ -38,6 +38,7 @@ const NavBar = ({ toggleLogin, setToggleLogin }) => {
 
   return (
     <div className="navbar-container">
+      {console.log("nav", toggleLogin, user)}
       <Link to={"/teapots"}>
         <h1>TeaWhips</h1>
       </Link>
