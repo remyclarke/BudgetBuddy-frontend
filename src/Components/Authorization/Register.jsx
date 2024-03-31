@@ -31,7 +31,7 @@ const Register = () => {
 
       console.log("register", data);
 
-      if (data.token) {
+      if (data.newUser.token) {
         localStorage.removeItem("token"); // Clear any existing token
         localStorage.setItem("token", data.newUser.token);
 
