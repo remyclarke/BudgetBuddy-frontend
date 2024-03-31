@@ -4,8 +4,6 @@ import "./Dashboard.css";
 
 const Dashboard = () => {
   const { user } = useOutletContext(); // Access user data provided by the Outlet's context
-  console.log("user", user);
-  const navigate = useNavigate();
 
   return (
     <div className="register-container">

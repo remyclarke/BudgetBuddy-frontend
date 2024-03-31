@@ -23,7 +23,6 @@ const NavBar = ({ toggleLogin, setToggleLogin }) => {
         })
           .then((response) => response.json())
           .then((data) => {
-            console.log("data", data);
             setUser(data.user);
           })
           .catch((error) => console.error("Error fetching user:", error));
@@ -41,7 +40,6 @@ const NavBar = ({ toggleLogin, setToggleLogin }) => {
 
   return (
     <div className="navbar-container">
-      {console.log("nav", toggleLogin, user)}
       <Link to={"/teapots"}>
         <h1>TeaWhips</h1>
       </Link>
@@ -57,12 +55,15 @@ const NavBar = ({ toggleLogin, setToggleLogin }) => {
             <p className="p2">Login</p>
           </Link>
         ) : (
-          <Link
-            onClick={handleLogout}
-            style={{ textDecoration: "none", color: "black" }}
-          >
-            <p className="p2">Logout</p>
-          </Link>
+          <>
+            <span>Teatime, {user.username}</span>
+            <Link
+              onClick={handleLogout}
+              style={{ textDecoration: "none", color: "black" }}
+            >
+              <p className="p2">Logout</p>
+            </Link>
+          </>
         )}
       </article>
     </div>
