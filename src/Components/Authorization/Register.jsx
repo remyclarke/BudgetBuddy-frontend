@@ -29,9 +29,11 @@ const Register = () => {
       if (!res.ok) throw new Error("Registration failed");
       const data = await res.json();
 
-      if (data.token) localStorage.setItem("token", data.newUser.token);
+      if (data.token) {
+        localStorage.setItem("token", data.newUser.token);
 
-      navigate("/dashboard");
+        navigate("/dashboard");
+      }
     } catch (error) {
       console.error("Error during registration:", error);
     }
