@@ -22,6 +22,7 @@ export const useAuth = () => {
         if (response.ok) {
           const data = await response.json();
           console.log("checkauth data", data);
+          console.log("local", localStorage.getItem("token"));
           setIsAuthenticated(data.isAuthenticated);
           setUser(data.user);
           setIsLoading(false);
