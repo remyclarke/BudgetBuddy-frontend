@@ -56,7 +56,7 @@ const NavBar = ({ toggleLogin, setToggleLogin }) => {
           </Link>
         ) : (
           <>
-            <span>Teatime, {user.username}</span>
+            {console.log(toggleLogin, user)}
             <Link
               onClick={handleLogout}
               style={{ textDecoration: "none", color: "black" }}
