@@ -27,7 +27,10 @@ function App() {
           path="/login"
           element={<Login setToggleLogin={setToggleLogin} />}
         />
-        <Route path="/register" element={<Register />} />
+        <Route
+          path="/register"
+          element={<Register setToggleLogin={setToggleLogin} />}
+        />
         {/* Names of routes? */}
         <Route path="/teapots" element={<Index />} />
         <Route
