@@ -2,6 +2,7 @@ import { Link, useNavigate } from "react-router-dom";
 import "./NavBar.css";
 import { useAuth } from "../Authorization/ProtectedRoute";
 import { useEffect, useState } from "react";
+const URL = import.meta.env.VITE_BASE_URL;
 
 const NavBar = ({ toggleLogin, setToggleLogin }) => {
   const [login, setLogin] = useState(false);
@@ -9,7 +10,7 @@ const NavBar = ({ toggleLogin, setToggleLogin }) => {
   const navigate = useNavigate();
 
   async function handleLogout() {
-    const response = await fetch("http://localhost:3003/api/auth/logout");
+    const response = await fetch(`${URL}/api/auth/logout`);
     localStorage.removeItem("token");
     if (response.ok) {
       setToggleLogin(false);
