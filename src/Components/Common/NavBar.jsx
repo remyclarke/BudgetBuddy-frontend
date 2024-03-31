@@ -42,7 +42,9 @@ const NavBar = ({ toggleLogin, setToggleLogin }) => {
         <h1>TeaWhips</h1>
       </Link>
       <article>
-        <span>Hi, </span>
+        {toggleLogin && (
+          <span style={{ color: "white" }}>Hi, {user.username}</span>
+        )}
         <Link to={"/about"}>
           <p className="p1">About</p>
         </Link>
