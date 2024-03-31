@@ -44,9 +44,6 @@ const NavBar = ({ toggleLogin, setToggleLogin }) => {
         <h1>TeaWhips</h1>
       </Link>
       <article>
-        {user && (
-          <span style={{ color: "white" }}>Welcome, {user.username}</span>
-        )}
         <Link to={"/about"}>
           <p className="p1">About</p>
         </Link>
@@ -58,14 +55,23 @@ const NavBar = ({ toggleLogin, setToggleLogin }) => {
             <p className="p2">Login</p>
           </Link>
         ) : (
-          <>
+          <div>
+            {user && (
+              <span style={{ color: "white" }}>
+                Teatime, {user.username}? |{" "}
+              </span>
+            )}
             <Link
               onClick={handleLogout}
-              style={{ textDecoration: "none", color: "black" }}
+              style={{
+                textDecoration: "none",
+                color: "black",
+                display: "inline-block",
+              }}
             >
               <p className="p2">Logout</p>
             </Link>
-          </>
+          </div>
         )}
       </article>
     </div>
