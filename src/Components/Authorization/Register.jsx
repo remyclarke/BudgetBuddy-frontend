@@ -28,10 +28,10 @@ const Register = () => {
       const res = await fetch(`${URL}/api/auth/register`, options);
       if (!res.ok) throw new Error("Registration failed");
       const data = await res.json();
-      console.log("data", data);
+
       if (data.token) localStorage.setItem("token", data.newUser.token);
 
-      navigate("/dashboard"); // Navigate to /dashboard on success
+      navigate("/dashboard");
     } catch (error) {
       console.error("Error during registration:", error);
     }

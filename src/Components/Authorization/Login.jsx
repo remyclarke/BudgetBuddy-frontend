@@ -3,7 +3,6 @@ import { useState } from "react";
 import "./Login.css";
 const URL = import.meta.env.VITE_BASE_URL;
 
-// console.log(`URL`, URL)
 const Login = ({ setToggleLogin }) => {
   const [user, setUser] = useState({ username: "", password: "" });
   const navigate = useNavigate();

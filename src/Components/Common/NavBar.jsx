@@ -7,7 +7,6 @@ const NavBar = ({ toggleLogin, setToggleLogin }) => {
   const [login, setLogin] = useState(false);
   const user = useAuth();
   const navigate = useNavigate();
-  //   console.log(user)
 
   async function handleLogout() {
     const response = await fetch("http://localhost:3003/api/auth/logout");

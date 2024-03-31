@@ -1,9 +1,4 @@
-import {
-  Link,
-  useParams,
-  // useOutletContext,
-  useNavigate,
-} from "react-router-dom";
+import { Link, useParams, useNavigate } from "react-router-dom";
 import { useAuth } from "../Authorization/ProtectedRoute";
 import { useState, useEffect } from "react";
 
@@ -11,8 +6,7 @@ const URL = import.meta.env.VITE_BASE_URL;
 
 const Review = ({ review, reviews, setReviews }) => {
   const user = useAuth();
-  // const [username, setUserName] = useState("");
-  // const [loading, setLoading] = useState(true);
+
   const { teapot_id } = useParams();
   const navigate = useNavigate();
 
@@ -37,7 +31,7 @@ const Review = ({ review, reviews, setReviews }) => {
         },
       })
         .then((response) => response.json())
-        .then((responseJSON) => {
+        .then(() => {
           const copyReviewArray = [...reviews];
           const indexDeletedReview = copyReviewArray.findIndex((review) => {
             return review.id === id;
