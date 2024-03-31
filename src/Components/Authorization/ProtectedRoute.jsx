@@ -13,6 +13,8 @@ export const useAuth = () => {
     const checkAuth = async () => {
       setIsLoading(true);
       const token = localStorage.getItem("token");
+
+      console.log("checkauth token", token);
       try {
         const response = await fetch(`${URL}/api/auth/check-auth`, {
           headers: {
@@ -22,7 +24,7 @@ export const useAuth = () => {
         if (response.ok) {
           const data = await response.json();
           console.log("checkauth data", data);
-          console.log("local", localStorage.getItem("token"));
+
           setIsAuthenticated(data.isAuthenticated);
           setUser(data.user);
           setIsLoading(false);
