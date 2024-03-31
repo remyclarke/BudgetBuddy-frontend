@@ -29,10 +29,8 @@ const Register = () => {
       if (!res.ok) throw new Error("Registration failed");
       const data = await res.json();
 
-      console.log("register", data);
-
       if (data.newUser.token) {
-        localStorage.removeItem("token"); // Clear any existing token
+        localStorage.removeItem("token");
         localStorage.setItem("token", data.newUser.token);
 
         navigate("/dashboard");

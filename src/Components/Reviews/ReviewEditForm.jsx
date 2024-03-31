@@ -49,9 +49,8 @@ const ReviewEditForm = ({ setReviews, reviews }) => {
           return review.id === review_id;
         });
         copyReviewArray[indexUpdatedReview] = responseJSON;
-        console.log(copyReviewArray.reverse());
+
         setReviews(copyReviewArray);
-        // setReviews(copyReviewArray.reverse());
 
         setUpdatedReview({
           content: "",
