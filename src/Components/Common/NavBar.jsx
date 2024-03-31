@@ -8,6 +8,8 @@ const URL = import.meta.env.VITE_BASE_URL;
 const NavBar = ({ toggleLogin, setToggleLogin }) => {
   const navigate = useNavigate();
 
+  const [user, setUser] = useState(null);
+
   useEffect(() => {
     if (!toggleLogin) setUser(null);
 
