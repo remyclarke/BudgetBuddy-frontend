@@ -60,7 +60,7 @@ const ProtectedRoute = () => {
     return <Navigate to="/login" replace />;
   }
 
-  return <Outlet context={{ user }} />; // If authenticated, continue rendering the component the route is pointing to
+  return <Outlet context={user} />; // If authenticated, continue rendering the component the route is pointing to
 };
 
 export default ProtectedRoute;
