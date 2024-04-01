@@ -21,13 +21,13 @@ export const useAuth = () => {
           },
         });
         if (response.ok) {
-          const data = await response.json();
+          const { isAuthenticated, user } = await response.json();
 
-          setIsAuthenticated(data.isAuthenticated);
-          setUser(data.user);
+          setIsAuthenticated(isAuthenticated);
+          setUser(user);
           setIsLoading(false);
         } else {
-          setIsAuthenticated(data.isAuthenticated);
+          setIsAuthenticated(isAuthenticated);
           setIsLoading(false);
           setUser(null);
         }
