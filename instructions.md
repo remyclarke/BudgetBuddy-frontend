@@ -2,14 +2,14 @@
 
 ## Getting Started
 
-You can use this frontend and the [backend](https://github.com/10-3-pursuit/auth-express-login) repo as starters for a full stack project that will include login
+You can use this frontend and the [backend](https://github.com/10-3-pursuit/jwt-auth-backend) repo as starters for a full stack project that will include login
 
 **Steps:**
 
 - Create a parent folder
 - `fork` both repos
-  - [frontend](<(https://github.com/10-3-pursuit/auth-react-login)>)
-  - [backend](https://github.com/10-3-pursuit/auth-express-login)
+  - [frontend](https://github.com/10-3-pursuit/jwt-auth-frontend)
+  - [backend](https://github.com/10-3-pursuit/jwt-auth-backend)
 - `clone` both forked repos into the parent folder
 - Use the `env.example` in the backend to set up your postgresql database
 - Postgresql tables have been included in `db/schema.sql` to define the user.
@@ -40,39 +40,42 @@ e.g.
 </ProtectedRoute>
 ```
 
-#### XSRF
+#### Authorized GET Routes
 
-In the `Login.jsx` and `Register.jsx` components, the XSRF token is included in the request headers.
-
-The extra XSRF (Cross-Site Request Forgery) token is used as a security measure to protect against CSRF attacks. A CSRF attack forces a logged-in user to execute unwanted actions on a web application in which they're currently authenticated. By requiring an XSRF token with each request, your application ensures that the request is coming from a legitimate source (i.e., your application) and not from a malicious site.
-
-The XSRF token is extracted from cookies in your browser, and sent with requests to perform actions that change the state on the server, such as login and registration. This token is validated by the server to ensure it matches the expected value, thereby preventing CSRF attacks.
-
-[CSRF - Cross Site Resource Forgery Video](https://www.youtube.com/watch?v=eWEgUcHPle0)
-
-#### Forms
-
-For every form, you will need to include CSRF credentials. You will need to add the csrf token from the cookie, add the correct method and update the options object. The rest of the fetch should be as you already know. See `Login.jsx` or `Register.jsx` See code below.
+Every authorized `GET` route will need to include a `Bearer token` in the Header. This is the JWT token that was created on the backend, sent to the frontend and stored in localStorage
 
 ```js
-const csrfToken = document.cookie
-  .split("; ")
-  .find((row) => row.startsWith("XSRF-TOKEN="))
-  .split("=")[1]; // Extract CSRF token from cookies
-
-const options = {
-  method: "POST", // could be PUT
+const response = await fetch(`${URL}/api/auth/check-auth`, {
   headers: {
-    "Content-Type": "application/json",
-    "CSRF-Token": csrfToken, // Include CSRF token in request headers
+    Authorization: `Bearer ${token}`,
   },
-  credentials: "include", // Important: Include cookies in the request
-  body: JSON.stringify(user),
-};
+});
 ```
+
+Prior to making a `GET` fetch called for authorized information and views, you will retrieve the `JWT Token` from the Browser. (check Inspector Tools -> Application -> Storage -> Local storage)
+
+```js
+const token = localStorage.getItem("token");
+```
+
+#### Login & Register
+
+After a successful login or registration you will want to add the JWT token to localStorage before navigating to another view
+
+```js
+if (data.token) {
+  localStorage.setItem("token", data.token);
+}
+```
+
+This will allow the checkauth function to send that token to the backend and confirm that a user is logged in before allowing them into the Protected Routes
 
 <hr />
 
+#### Logout
+
+Logout is very straightforward. You only need remove the `token` from `localStorage`. With no token the checkauth function will not pass and a user will not be able to enter `ProtectedRoute` views.
+
 ### Go to Backend
 
-Also consult [Auth-Express-Backend Readme](https://github.com/10-3-pursuit/auth-express-login) to see what security precautions have been put into place as well as auth routes for the login and register.
+Also consult [jwt-auth-backend](https://github.com/10-3-pursuit/jwt-auth-backend) to see what security precautions have been put into place as well as auth routes for the login and register.
