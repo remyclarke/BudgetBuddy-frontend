@@ -1,13 +1,10 @@
 import { useEffect, useState } from "react";
 
-import { Link, useNavigate } from "react-router-dom";
-import "./NavBar.css";
+import { Link } from "react-router-dom";
 
 const URL = import.meta.env.VITE_BASE_URL;
 
-const NavBar = ({ toggleLogin, setToggleLogin }) => {
-  const navigate = useNavigate();
-
+const NavBar = ({ toggleLogin, handleLogout }) => {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
@@ -33,17 +30,19 @@ const NavBar = ({ toggleLogin, setToggleLogin }) => {
   return (
     <div className="navbar-container">
       <h1>Navbar Component</h1>
+      <h2>
+        <Link style={{ textDecoration: "none" }} to="/">
+          Your image or Logo
+        </Link>
+      </h2>
 
-      <Link to={"/about"}>
-        <p className="p1">About</p>
-      </Link>
       {!toggleLogin ? (
         <Link to={"/login"}>
           <span>Login</span>
         </Link>
       ) : (
         <div>
-          {user && <span>Hello, {user.username}? | </span>}
+          {user && <span>Hello, {user.username.toUpperCase()}? | </span>}
           <Link onClick={handleLogout}>
             <span>Logout</span>
           </Link>

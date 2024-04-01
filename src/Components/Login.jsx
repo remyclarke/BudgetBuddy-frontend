@@ -1,6 +1,6 @@
-import { useNavigate, Link } from "react-router-dom";
 import { useState } from "react";
-import "./Login.css";
+import { useNavigate, Link } from "react-router-dom";
+
 const URL = import.meta.env.VITE_BASE_URL;
 
 const Login = ({ setToggleLogin }) => {
@@ -34,7 +34,7 @@ const Login = ({ setToggleLogin }) => {
       if (data.token) {
         localStorage.setItem("token", data.token);
         await setToggleLogin(true);
-        navigate("/teapots");
+        navigate("/dashboard");
       } else {
         console.log("JWT Login Failed");
       }
@@ -61,9 +61,23 @@ const Login = ({ setToggleLogin }) => {
   }
 
   return (
-    <div>
+    <div style={{ textAlign: "center" }}>
+      <h1>Login Component</h1>
+      <br />
+      <h2>
+        Use the DemoUser button to login and save time during your presentation
+      </h2>
       <button onClick={handleDemoSignIn}>Demo User</button>
-      <h3>Login</h3>
+      <br />
+      <br />
+      <br />
+
+      <h3> Remove the 'br' tags and these instructions if you use this code</h3>
+
+      <br />
+      <br />
+      <br />
+      <h3>Below is the regular login form which should be functional</h3>
       <form onSubmit={handleSubmit}>
         <label htmlFor="username">
           <input

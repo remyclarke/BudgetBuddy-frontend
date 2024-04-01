@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
-import "../Authorization/Login.css";
 
 const URL = import.meta.env.VITE_BASE_URL;
 
@@ -26,14 +25,15 @@ const Register = ({ setToggleLogin }) => {
 
     try {
       const res = await fetch(`${URL}/api/auth/register`, options);
+
       if (!res.ok) throw new Error("Registration failed");
       const data = await res.json();
 
-      if (data.newUser.token) {
+      if (data.token) {
         // in case there is an old token in the browser, remove it
         localStorage.removeItem("token");
         // set the new user's JWT token in the browser
-        localStorage.setItem("token", data.newUser.token);
+        localStorage.setItem("token", data.token);
         setToggleLogin(true);
         navigate("/dashboard");
       }
@@ -42,9 +42,11 @@ const Register = ({ setToggleLogin }) => {
     }
   }
 
+  // USE THIS FORM TO BUILD OUT YOUR FORM PROPERLY BY ADDING LABELS AND INPUTS AS WELL AS WHATEVER CSS FRAMEWORK YOU MAY USE OR VANILLA CSS. THIS IS JUST A BOILERPLATE CODE
+
   return (
-    <div className="register-container">
-      <p style={{ fontSize: "20px" }}>
+    <div style={{ textAlign: "center" }}>
+      <p>
         Already have an account? <Link to="/login">Login</Link>
       </p>
       <h3>Register</h3>
