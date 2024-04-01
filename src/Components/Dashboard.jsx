@@ -9,7 +9,12 @@ const Dashboard = ({ handleLogout }) => {
       <br />
       <h2>Dashboard Component</h2>
 
-      {user && <h1>Welcome, {user.username}</h1>}
+      {user && (
+        <h1>
+          Welcome, {user.username[0].toUpperCase()}
+          {user.username.slice(1).toLowerCase()}
+        </h1>
+      )}
 
       {/* Use user data as needed, for example: */}
 
