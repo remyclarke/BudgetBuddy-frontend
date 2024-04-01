@@ -8,6 +8,7 @@ const Dashboard = ({ handleLogout }) => {
       <br />
       <br />
       <h2>Dashboard Component</h2>
+      {console.log("user in dash", user)}
       <h1>Welcome, {user && user.username.toUpperCase()}</h1>
 
       {/* Use user data as needed, for example: */}

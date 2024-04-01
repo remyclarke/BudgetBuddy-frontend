@@ -20,6 +20,7 @@ const NavBar = ({ toggleLogin, handleLogout }) => {
         })
           .then((response) => response.json())
           .then((data) => {
+            console.log("data navbar", data);
             setUser(data.user);
           })
           .catch((error) => console.error("Error fetching user:", error));
@@ -42,6 +43,7 @@ const NavBar = ({ toggleLogin, handleLogout }) => {
         </Link>
       ) : (
         <div>
+          {console.log("user in nav", user)}
           {user && <span>Hello, {user.username.toUpperCase()}? | </span>}
           <Link onClick={handleLogout}>
             <span>Logout</span>

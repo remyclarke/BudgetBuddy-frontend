@@ -31,6 +31,8 @@ const Login = ({ setToggleLogin }) => {
         setUser({ username: "", password: "" });
         throw new Error("Registration failed");
       }
+
+      console.log("data", data);
       if (data.token) {
         localStorage.setItem("token", data.token);
         await setToggleLogin(true);
