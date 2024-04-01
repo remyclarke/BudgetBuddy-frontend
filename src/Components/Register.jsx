@@ -30,7 +30,9 @@ const Register = ({ setToggleLogin }) => {
       const data = await res.json();
 
       if (data.newUser.token) {
+        // in case there is an old token in the browser, remove it
         localStorage.removeItem("token");
+        // set the new user's JWT token in the browser
         localStorage.setItem("token", data.newUser.token);
         setToggleLogin(true);
         navigate("/dashboard");
@@ -47,48 +49,40 @@ const Register = ({ setToggleLogin }) => {
       </p>
       <h3>Register</h3>
       <form onSubmit={handleSubmit}>
-        <section>
-          <label htmlFor="username">
-            <input
-              id="username"
-              value={user.username}
-              type="text"
-              placeholder="username"
-              onChange={handleChange}
-              autoComplete="username"
-            />
-          </label>
-        </section>
-        <section>
-          <label htmlFor="email">
-            <input
-              id="email"
-              value={user.email}
-              type="email"
-              placeholder="email"
-              onChange={handleChange}
-              autoComplete="email"
-            />
-          </label>
-        </section>
-        <section>
-          <label htmlFor="password">
-            <input
-              id="password"
-              value={user.password}
-              type="password"
-              placeholder="password"
-              onChange={handleChange}
-              autoComplete="current-password"
-            />
-          </label>
-        </section>
-        <section className="register-button-section">
-          <button>Submit</button>
-          <Link to={"/teapots"}>
-            <button>Back</button>
-          </Link>
-        </section>
+        <label htmlFor="username">
+          <input
+            id="username"
+            value={user.username}
+            type="text"
+            placeholder="username"
+            onChange={handleChange}
+            autoComplete="username"
+          />
+        </label>
+
+        <label htmlFor="email">
+          <input
+            id="email"
+            value={user.email}
+            type="email"
+            placeholder="email"
+            onChange={handleChange}
+            autoComplete="email"
+          />
+        </label>
+
+        <label htmlFor="password">
+          <input
+            id="password"
+            value={user.password}
+            type="password"
+            placeholder="password"
+            onChange={handleChange}
+            autoComplete="current-password"
+          />
+        </label>
+
+        <button>Submit</button>
       </form>
     </div>
   );

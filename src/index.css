@@ -6,29 +6,3 @@
   box-sizing: border-box;
   font-family: "Montserrat Alternates";
 }
-
-.background {
-  background-color: goldenrod;
-}
-
-button {
-  padding: 3px;
-  background: white;
-  border-radius: 7px;
-}
-
-
-button:hover {
-  background-color: maroon;
-  cursor: pointer;
-  color: white;
-}
-
-a {
-  text-decoration: none;
-  color: black;
-}
-
-a:hover {
-  color: maroon;
-}

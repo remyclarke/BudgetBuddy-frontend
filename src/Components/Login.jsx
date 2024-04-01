@@ -61,40 +61,32 @@ const Login = ({ setToggleLogin }) => {
   }
 
   return (
-    <div className="login-container">
+    <div>
       <button onClick={handleDemoSignIn}>Demo User</button>
       <h3>Login</h3>
       <form onSubmit={handleSubmit}>
-        <section>
-          <label htmlFor="username">
-            <input
-              id="username"
-              value={user.username}
-              type="text"
-              placeholder="username"
-              autoComplete="username"
-              onChange={handleChange}
-            />
-          </label>
-        </section>
-        <section>
-          <label htmlFor="password">
-            <input
-              id="password"
-              value={user.password}
-              type="password"
-              placeholder="password"
-              onChange={handleChange}
-              autoComplete="current-password"
-            />
-          </label>
-        </section>
-        <section className="button-section">
-          <button>Submit</button>
-          <Link to={"/teapots"}>
-            <button>Back</button>
-          </Link>
-        </section>
+        <label htmlFor="username">
+          <input
+            id="username"
+            value={user.username}
+            type="text"
+            placeholder="username"
+            autoComplete="username"
+            onChange={handleChange}
+          />
+        </label>
+
+        <label htmlFor="password">
+          <input
+            id="password"
+            value={user.password}
+            type="password"
+            placeholder="password"
+            onChange={handleChange}
+            autoComplete="current-password"
+          />
+        </label>
+        <button>Submit</button>
       </form>
       <p>
         No Account? <Link to="/register">Register</Link>

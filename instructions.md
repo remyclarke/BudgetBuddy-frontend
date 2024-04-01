@@ -1,4 +1,4 @@
-# REACT STARTER WITH PROTECTED ROUTES
+# REACT STARTER WITH PROTECTED ROUTES & JWT Token
 
 ## Getting Started
 
@@ -56,19 +56,19 @@ For every form, you will need to include CSRF credentials. You will need to add 
 
 ```js
 const csrfToken = document.cookie
-  .split('; ')
-  .find((row) => row.startsWith('XSRF-TOKEN='))
-  .split('=')[1] // Extract CSRF token from cookies
+  .split("; ")
+  .find((row) => row.startsWith("XSRF-TOKEN="))
+  .split("=")[1]; // Extract CSRF token from cookies
 
 const options = {
-  method: 'POST', // could be PUT
+  method: "POST", // could be PUT
   headers: {
-    'Content-Type': 'application/json',
-    'CSRF-Token': csrfToken, // Include CSRF token in request headers
+    "Content-Type": "application/json",
+    "CSRF-Token": csrfToken, // Include CSRF token in request headers
   },
-  credentials: 'include', // Important: Include cookies in the request
+  credentials: "include", // Important: Include cookies in the request
   body: JSON.stringify(user),
-}
+};
 ```
 
 <hr />
