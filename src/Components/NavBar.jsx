@@ -32,7 +32,7 @@ const NavBar = ({ toggleLogin, handleLogout }) => {
       <h1>Navbar Component</h1>
       <h2>
         <Link style={{ textDecoration: "none" }} to="/">
-          Your image or Logo
+          Your image or Logo (click here to go to Landing Page)
         </Link>
       </h2>
 
