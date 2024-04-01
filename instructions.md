@@ -1,4 +1,4 @@
-# REACT STARTER WITH PROTECTED ROUTES & JWT Token
+# REACT Starter with Local Storage and JWT Tokens
 
 ## Getting Started
 
