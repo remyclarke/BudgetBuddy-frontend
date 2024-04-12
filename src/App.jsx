@@ -5,7 +5,6 @@ import ProtectedRoute from "./Components/ProtectedRoute";
 import Register from "./Components/Register";
 import Login from "./Components/Login";
 import Dashboard from "./Components/Dashboard";
-import NavBar from "./Components/NavBar";
 import LandingPage from "./Components/LandingPage";
 
 function App() {
@@ -22,12 +21,6 @@ function App() {
 
   return (
     <>
-      <NavBar
-        handleLogout={handleLogout}
-        toggleLogin={toggleLogin}
-        setToggleLogin={setToggleLogin}
-      />
-
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route
