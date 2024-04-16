@@ -11,6 +11,6 @@
       "forceConsistentCasingInFileNames": true,
       "allowJs": true // important to work with .js files
     },
-    "include": ["src"]
+    "include": ["src", "vite-env.d.ts"]
   }
   

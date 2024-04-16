@@ -1,24 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, Link as RouterLink } from 'react-router-dom';
 import {
-  Box,
-  Button,
-  Card,
-  CssBaseline,
-  TextField,
-  Typography,
-  ThemeProvider,
-  createTheme,
-  Link  // Correct import for MUI Link
+  Box, Button, Card, CssBaseline, TextField, Typography, ThemeProvider, createTheme, Link
 } from '@mui/material';
 import getSignInTheme from './sign-in/getSignInTheme';
+import { useUser } from '../../helpers/UserContext';  // Import the useUser hook from the context
 
 const URL = import.meta.env.VITE_BASE_URL;
 
 export default function SignIn() {
   const navigate = useNavigate();
-  const [user, setUser] = useState({ username: "", password: "" });
+  const [loginUser, setLoginUser] = useState({ username: "", password: "" });
   const [mode, setMode] = useState('light');
+  const { setUser } = useUser();  // Use the useUser hook to get the setUser function
 
   useEffect(() => {
     const token = localStorage.getItem("token");
@@ -43,12 +37,12 @@ export default function SignIn() {
   };
 
   const handleChange = (event) => {
-    setUser({ ...user, [event.target.name]: event.target.value });
+    setLoginUser({ ...loginUser, [event.target.name]: event.target.value });
   };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    if (!user.username || !user.password) {
+    if (!loginUser.username || !loginUser.password) {
       alert("You must enter a username and password");
       return;
     }
@@ -56,11 +50,12 @@ export default function SignIn() {
       const response = await fetch(`${URL}/api/auth/login`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(user),
+        body: JSON.stringify(loginUser),
       });
       const data = await response.json();
       if (!response.ok) throw new Error(data.message || "Authentication failed.");
       localStorage.setItem("token", data.token);
+      setUser(data.user);  // Set user in the global context
       navigate("/dashboard");
     } catch (error) {
       console.error("Login error:", error);
@@ -86,7 +81,7 @@ export default function SignIn() {
               name="username"
               autoComplete="username"
               autoFocus
-              value={user.username}
+              value={loginUser.username}
               onChange={handleChange}
             />
             <TextField
@@ -98,7 +93,7 @@ export default function SignIn() {
               type="password"
               id="password"
               autoComplete="current-password"
-              value={user.password}
+              value={loginUser.password}
               onChange={handleChange}
             />
             <Button type="submit" fullWidth variant="contained" sx={{ mt: 3, mb: 2 }}>Login</Button>

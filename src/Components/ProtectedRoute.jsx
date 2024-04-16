@@ -1,65 +1,51 @@
-// src/components/ProtectedRoute.jsx
-import { useState, useEffect } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { Navigate, Outlet } from "react-router-dom";
+import { useUser } from "../../helpers/UserContext";
 
 const URL = import.meta.env.VITE_BASE_URL;
 
-export const useAuth = () => {
-  const [isLoading, setIsLoading] = useState(true);
-  const [user, setUser] = useState();
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+const ProtectedRoute = () => {
+  const { user, isAuthenticated, setIsAuthenticated, setUser } = useUser();
+  const [isLoading, setIsLoading] = React.useState(true);
 
-  useEffect(() => {
+  React.useEffect(() => {
+    const token = localStorage.getItem("token");
     const checkAuth = async () => {
-      setIsLoading(true);
-      const token = localStorage.getItem("token");
-
       try {
         const response = await fetch(`${URL}/api/auth/check-auth`, {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
+          headers: { Authorization: `Bearer ${token}` },
         });
         if (response.ok) {
-          const { isAuthenticated, user } = await response.json();
-
-          setIsAuthenticated(isAuthenticated);
-          setUser(user);
-          setIsLoading(false);
+          const data = await response.json();
+          setIsAuthenticated(data.isAuthenticated);
+          setUser(data.user);
         } else {
-          setIsAuthenticated(isAuthenticated);
-          setIsLoading(false);
+          setIsAuthenticated(false);
           setUser(null);
         }
       } catch (error) {
         console.error("Error checking authentication:", error);
         setIsAuthenticated(false);
+        setUser(null);
+      } finally {
         setIsLoading(false);
       }
     };
 
-    checkAuth();
-  }, []);
+    if (token) {
+      checkAuth();
+    } else {
+      setIsAuthenticated(false);
+      setUser(null);
+      setIsLoading(false);
+    }
+  }, [setIsAuthenticated, setUser]);
 
-  return { isAuthenticated, isLoading, user };
-};
-
-const ProtectedRoute = () => {
-  const { isAuthenticated, isLoading, user } = useAuth();
   if (isLoading) {
-    return (
-      <div>
-        <h1>Loading...</h1>
-      </div>
-    );
+    return <div>Loading...</div>;
   }
 
-  if (!isAuthenticated) {
-    // Redirect them to the /login page, but save the current location they were
-    return <Navigate to="/login" replace />;
-  }
-
-  return <Outlet context={user} />; // If authenticated, continue rendering the component the route is pointing to
+  return isAuthenticated ? <Outlet /> : <Navigate to="/login" replace />;
 };
 
 export default ProtectedRoute;
